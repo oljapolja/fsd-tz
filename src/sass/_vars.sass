@@ -1,0 +1,22 @@
+$default-font: "RalewayRegular", sans-serif
+$accent: #f39f18
+$blue-dark: #2c3949
+$text: #333333
+$black: #111111
+$blue-light: #394b5f
+$gray-light: #e5e5e5
+$gray: #c0c0c0
+$gray-dark: #818181
+
+// в main прописать у .класса @include clearfix
+@mixin clearfix() 
+  &::after 
+    display: block
+    content: ""
+    clear: both
+
+// Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
+$grid-gutter-width: 30px
+$grid-columns: 12
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px)
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1200px)

@@ -1,0 +1,250 @@
+Скрипты
+
+1) Полавная прокрутка до элемента, по нажатию на кнопку
+
+   $(".arrow-a").click(function (event){ // у ".arrow-a" должен быть 'href' на нужный раздел
+      event.preventDefault();
+
+      var id = $(this).attr('href'),
+      top = $(id).offset().top + 50;
+      
+      
+   // $(".arrow-wrapper").on("click", "a", function (event){ // если ".arrow-wrapper" - это меню, а "a" это кнопка меню
+   //    event.preventDefault();
+   //    var id = $(this).attr('href'),
+   //    top = $(id).offset().top;
+      
+      $('body,html').animate({scrollTop: top}, 1000);
+   });
+
+
+2) Плавный скрол до начала странице, по нажатию на кнопку
+
+$(".up-button").click(function (){
+      
+      $('body,html').animate({scrollTop: 0}, 1000);
+   });
+
+
+3) Стандарт по карусельке
+
+$('.owl-carousel').owlCarousel({
+      loop:true,
+      margin:0,
+      nav:true,
+      navText: "",
+      autoplay: true,
+      autoplayHoverPause:true,
+      smartSpeed: 600,
+      responsive:{
+          0:{
+              items:1
+          }
+      }
+  });
+
+
++замена кнопок
+
+  $('.slider-button-prev').click(function() {
+     $('.owl-carousel').trigger("prev.owl");
+  });
+
+  $('.slider-button-next').click(function() {
+   $('.owl-carousel').trigger("next.owl");
+   });
+
+4) Плавное разворачивание свернутого меню на малых экранах
+
+$(".header-menu-toggle__button").click(function(event) {
+      event.preventDefault();
+      $(".header-menu__items").slideToggle();
+   });
+
+5) Плавное разворачивание меню в футере + изменение высоты футера 
+
+$(".footer-menu-toggle__button").click(function(event) {
+      event.preventDefault();
+
+      $(this).toggleClass("on");
+
+      // console.log($(".menu__items").height());
+      // console.log($(".main-footer").height());
+      
+
+      var ph = $(".menu__items").height() + $(".main-footer").height();
+
+      // console.log(ph);
+      
+      if($(".footer-menu-toggle__button").hasClass("on")){      
+         $(".main-footer").height(ph);
+         $('body,html').animate({scrollTop: $(document).height() + $(window).height()}, 1100);
+
+         // console.log($(".menu__items").height());
+         // console.log($(".main-footer").height());
+
+      } else {
+         var ph = $(".main-footer").height() - $(".menu__items").height();
+
+         // console.log($(".menu__items").height());
+         // console.log($(".main-footer").height());
+         // console.log(ph);
+         // console.log(Number.parseInt($(".main-footer").css("padding-top") + $(".main-footer").css("padding-bottom")));
+         
+       //  Number.parseInt(val)
+
+         $(".main-footer").animate({height: ph + Number.parseInt($(".main-footer").css("padding-top") + $(".main-footer").css("padding-bottom"))}, 500);
+      }
+
+      $(".footer-menu__items").slideToggle();
+
+			// var ph = $(".footer-menu-toggle__button").height();
+			// var pdt = $(this).find(".footer-menu__items");
+			// pdt.height(ph);
+   });
+
+
+6) Установить отметку на срабатывание анимации
+
+   var waypoint1 = new Waypoint({
+      element: document.getElementById('benefits-id'), // элемент, докручивая до которого, срабатывает анимация
+      handler: function() {
+         $(".benefits__item-wrapper").each(function(index) {
+            var ths = $(this);
+            setInterval(function() { // устанавливаем интервал на срабатывание
+               ths.removeClass("benefits__item-wrapper-off").addClass("benefits__item-wrapper-on"); // анимация
+            }, 100*index);
+         });
+      },
+      offset: "25%" // срабатывает выше элемента на 25 %
+   });
+
+7) По плагину с animation.css (объяснение в файле плагина)
+
+$(".property-valuation .section-title h2, .property-valuation .section-title p").animated("p-v", "fadeIn");
+
+8) Появлябщееся окно magnific-popup
+
+$(".button-section .button").click(function() {
+      $("#callback .feedback__title").html($(this).text());
+      $("#callback input.enabled").attr("value", $(this).text());
+   }).magnificPopup({
+          type: 'inline',
+          mainClass: 'mfp-fade',
+          fixedContentPos: false
+      });
+
+9)  Форма обратной связи
+
+$(".feedback").submit(function() {
+      $.ajax({
+         type: "GET",
+         url: "mail.php",
+         data: $(this).serialize() // собирает поля формы и отправляет на mail.php
+      }).done(function() {
+         alert("Спасибо за заявку!");
+         setTimeout(function() {
+            $(".feedback").trigger("reset"); // сбрасываем поля формы после сабмита
+            $.fancybox.close();
+         }, 1000);
+      });
+      return false;
+   });
+
+
+   $(".feedback").submit(function() {
+      $.ajax({
+         type: "GET",
+         url: "mail.php",
+         data: $(this).serialize() // собирает поля формы и отправляет на mail.php
+      }).done(function() {
+         $(".success").addClass("visible");
+         setTimeout(function() {
+            $(".feedback").trigger("reset"); // сбрасываем поля формы после сабмита
+            $(".success").removeClass("visible");
+            $.magnificPopup.close();
+         }, 2000);
+      });
+      return false;
+   });
+
+
+10) Супер-фиш и м-меню
+
+   jQuery('ul.sf-menu').superfish({
+      delay: 300,
+      cssArrows:  false
+   })
+   .after("<div id='mobile-menu'>").clone().appendTo("#mobile-menu");
+
+
+   $("#mobile-menu").find("*").attr("style", "");
+   $("#mobile-menu").children("ul").removeClass("sf-menu");
+
+   $("#mobile-menu").mmenu({
+      extensions :  {
+         "all" : ['theme-white', "border-none", "pagedim-black", "fx-listitems-slide", "fx-menu-slide"],
+         "(max-width: 576px)": ["fullscreen"]
+      },
+      navbars : {
+         content : ["prev", "title", "close"]         
+      },
+      navbar : {
+         title: "Меню"
+      }
+   });  
+
+
+   $(".toggle-mnu").click(function() {
+      $(this).addClass("on");
+   });
+
+   // var $menu = $("#mobile-menu").mmenu();
+   var api = $("#mobile-menu").data("mmenu");
+
+   api.bind( "close:finish", function() {      
+      $('.toggle-mnu').removeClass('on'); 
+   });
+
+
+
+   $(".menu-line__items > .menu-line__item").each(function() {
+      var wd = $(this).width();
+      var wdt = $(this).find(".menu-line__subitems > .menu-line__item");
+      wdt.width(wd);
+   });
+
+11) Одинаковая высота
+
+$(".goverment-portals-section__item").equalHeights();
+
+12) Lazyload чтобы не прыгал текст при загрузке стр (у img width=100%)
+
+   //$("img.lazy").lazyload();
+
+   //--------------------------------------------------------------------------------------------------------
+    var lazyLoadInsrance = new LazyLoad({
+      elements_selector: ".lazy"
+   });
+
+   //<img class="lazy" data-original="img/example.jpg" width="765" height="574">
+   //<img class="lazy" src="img/example-thumb.jpg" data-original="img/example.jpg" width="765" height="574">
+   //
+   //<img src="data:image/png;base64,KKDFJL3J3RWL=" data-src="img/original.jpg" alt="Image" (width="765" height="574")>  -- используй это
+   
+
+   // $('body').fadeOut();
+   //--------------------------------------------------------------------------------------------------------
+
+13) Маски для тлф номеров и не только
+
+   //--------------------------------------------------------------------------------------------------------
+   //$("#date").mask("99/99/9999");
+   $("#phone").mask("+7 (999) 999-99-99",{completed:function(){alert("You typed the following: "+this.val());}});
+   //$("#tin").mask("99-9999999");
+   //$("#product").mask("99/99/9999",{placeholder:" "});
+   //,{completed:function(){alert("You typed the following: "+this.val());}}
+
+   //--------------------------------------------------------------------------------------------------------
+
+
