@@ -5,32 +5,30 @@
 	&:before, &:after
 		box-sizing: border-box
 
-::placeholder
-	color: #666
 
 ::selection
-	background-color: $accent
+	background-color: $purple
 	color: #fff
 
 html, body
 	height: 100%
 
 body
-	font-size: 15px
+	font-size: 14px
 	min-width: 320px
 	position: relative
-	line-height: em(22px)
+	line-height: 24px
 	font-family: $default-font
 	overflow-x: hidden
 	opacity: 1
-	color: $accent
+	color: $text
 	input, textarea
-		border: #666 1px solid
 		outline: none
 		&:focus:required:invalid
-			border-color: $accent
+			border-color: $purple
 		&:required:valid
 			border-color: green
+
 
 .img-responsive
 	display: block
@@ -40,93 +38,78 @@ body
 .text-center
 	text-align: center
 
-b, strong
-	font-family: "RalewayBold", serif
+.gradient-color-text
+	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+	-webkit-background-clip: text
+	-webkit-text-fill-color: transparent
 
-.accent
-	text-decoration: underline
-	color: $accent
-	&:focus, &:hover
-		text-decoration: none
-		color: $accent
 
+h1, h2,
+.h1, .h2,
+	font-family: "OpenSansdBold", serif
+	color: $black
 	
 
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6
-	font-family: "PFCentroSlabProMedium", serif
-	line-height: em(22px)
-	font-weight: normal
-
-
-
-
-h1
-	font-size: 48px
-	color: #ffffff
-	border-bottom: 8px $accent solid
-	display: inline-block
-
-h2
-	font-size: 30px
-	text-transform: uppercase
-	color: $blue-dark
-
-h3
+h1, .h1
 	font-size: 24px
-	color: $blue-light
+	line-height: 30px
+	// margin-top: 10px
+	margin-bottom: 20px
+	padding: 0
+	
+
+h2, .h2
+	font-size: 19px
+	line-height: 24px
+	margin-bottom: 20px
+
+
+h3, .h3
+	font-size: 12px
+	font-family: "MontserratBold", serif
+	color: $black
 	text-transform: uppercase
-	text-align: center
+	line-height: 15px
+	font-weight: 700
+	margin: 0 0 5px 0
+	padding: 0
+
+p
+	margin-bottom: 10px
+
+.text
+	font-size: 14px
+	line-height: 18px
+	font-family: $default-font
+	color: #000
 
 .hidden
 	display: none
 
-.general-section
-	padding: 60px 0
-
 .white-space
 	white-space: nowrap
 
-.button
-	display: inline-block
-	border: none
-	color: $black
-	text-decoration: none
-	background-color: $accent
-	padding: 14px 30px
-	margin-top: 5px
-	font-size: 20px
-	line-height: 20px
-	font-family: "PFCentroSlabProBold"
-	text-align: center
-	position: relative
-	outline: none
-	transition: background-color .1s ease
-	cursor: pointer
-	&::after
-		transition: background-color .2s ease
-		position: absolute
-		content: ''
-		height: 4px
-		bottom: 0
-		width: 100%
-		background-color: darken($accent, 50%)
-		opacity: .18
-		border-bottom-left-radius: 2px
-		border-bottom-right-radius: 2px
-		left: 0
-	&:focus, &:hover
-		text-decoration: none
-		color: $black
-	&:hover
-		background-color: lighten($accent, 5%)
-		&::after
-			opacity: .22
-	&:active
-		background-color: darken($accent, 5%)
-		&::after
-			opacity: .32
 
+::placeholder
+	color: $gray
+	opacity: 1
+
+input, label
+	cursor: pointer
+
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 .lazy
     background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
+
+.my-container
+	padding: 50px
+	
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+.colors-type-container
+	margin: 145px 191px 145px 150px
+	display: flex
+	justify-content: space-between

@@ -1,0 +1,56 @@
+.ui-kit-types
+
+.ui-kit-types__items
+    margin: 0
+    padding: 0
+    list-style: none
+    display: inline-block
+    max-width: 403px
+
+.ui-kit-types__item
+    margin-bottom: 50px
+    display: flex
+    align-items: top
+    padding-left: 60px
+    position: relative
+    div, p
+        &:before
+            color: $gray
+            font-family: $default-font
+            // margin-right: 30px
+            width: 40px
+            position: absolute
+            top: 0
+            left: 0
+            text-align: right
+    .h1
+        &:before
+            content: 'H1'
+            font-size: 24px
+            line-height: 29px
+    .h2
+        &:before
+            content: 'H2'
+            font-size: 19px
+            line-height: 23px
+    .h3
+        &:before
+            content: 'H3'
+            font-size: 12px
+            line-height: 15px
+    p
+        &:before
+            content: 'body'
+            font-size: 12px
+            line-height: 15px
+
+
+.ui-kit-types__text-area
+    display: flex
+    flex-direction: column
+    color: $black
+    font-size: 19px
+    line-height: 29px
+    font-family: "OpenSansdBold", serif
+    span
+        font-family: "OpenSansdRegular", serif

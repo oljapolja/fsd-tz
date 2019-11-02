@@ -1,0 +1,61 @@
+.ui-kit-colors
+
+.ui-kit-colors__items
+    margin: 0
+    padding: 0
+    list-style: none
+    display: inline-block
+
+.ui-kit-colors__item
+    margin-bottom: 20px
+    position: relative
+    padding-left: 110px
+    min-height: 70px
+    display: flex
+    align-items: center
+    &:before
+        content: ""
+        position: absolute
+        width: 70px
+        height: 70px
+        border-radius: 6px
+        top: 0
+        left: 0
+
+.ui-kit-colors__item_black
+    &:before
+        background-color: $black
+
+.ui-kit-colors__item_text
+    &:before
+        background-color: $text
+
+.ui-kit-colors__item_gray-dark
+    &:before
+        background-color: $gray-dark
+
+.ui-kit-colors__item_gray
+    &:before
+        background-color: $gray
+
+.ui-kit-colors__item_gray-light
+    &:before
+        background-color: $gray-light
+
+.ui-kit-colors__item_purple 
+    &:before
+        background-color: $purple
+
+.ui-kit-colors__item_green
+    &:before
+        background-color: $green
+
+.ui-kit-colors__text-area
+    display: flex
+    flex-direction: column
+    color: $black
+    font-size: 19px
+    line-height: 29px
+    font-family: "OpenSansdBold", serif
+    span
+        font-family: "OpenSansdRegular", serif
