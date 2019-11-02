@@ -48,11 +48,17 @@ const paths = {
    	        'node_modules/kbw-countdown/dist/js/jquery.countdown-ru.js',
    	        'node_modules/superfish/dist/js/superfish.min.js',
             'node_modules/mmenu-js/dist/mmenu.js',
+            'node_modules/select2/dist/js/select2.min.js',
             'src/libs/lazyload.min.js',
+            'src/libs/jquery-ui-1.12.1.custom/jquery-ui.js',
+            // 'src/libs/jquery.datepicker.extension.range.min.js',
+            // 'src/libs/jquery.datepicker.extension.range.min.js',
+            'node_modules/air-datepicker/dist/js/datepicker.js',
 //            'node_modules/lazyload/lazyload.js',
             'node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
-  	        'src/libs/animate-css.js',
-   	        'src/libs/landing-nav/navigation.js' //кастомный "библиотек" подключаем из папки
+            // 'node_modules/zebra_datepicker/dist/zebra_datepicker.min.js', удалить
+  	        'src/libs/animate-css.js'
+//   	        'src/libs/landing-nav/navigation.js' //кастомный "библиотек" подключаем из папки
 //		'src/libs/drawfillsvg.min.js'//кастомный "библиотек" подключаем из папки
         ],
         css: 'src/css/',
@@ -140,9 +146,9 @@ gulp.task('cleanCode', async function() { // При изменении любо�
 
 // задание для browser-sync,  указываем директорию для сервера и выключаем оповещения
 gulp.task('browser-sync', function() {
-    browserSync({
+    browserSync.init({
         server: {
-            baseDir: 'dist'
+            baseDir: './dist'
         },
         notify:true
 	//tunnel: true
