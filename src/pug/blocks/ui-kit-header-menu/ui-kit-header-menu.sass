@@ -1,0 +1,74 @@
+.ui-kit-header-menu__items
+    margin: 0
+    padding: 0
+    list-style: none
+
+.ui-kit-header-menu__item
+    display: inline-block
+    margin-right: 30px
+    letter-spacing: -0.3px
+    &:last-child
+        margin-right: 0
+    &_expand
+        margin-right: 20px
+
+.ui-kit-header-menu__item-link
+    font-size: 14px
+    line-height: 17px
+    font-family: "MontserratRegular", serif
+    color: $gray-dark
+    transition: color .3s ease
+    &:hover
+        color: $purple
+        text-decoration: none
+    .expand-more-icon
+        line-height: 21px
+        vertical-align: middle
+        transition: color .3s ease
+    i.material-icons.expand-more-icon
+        line-height: 17px
+        margin-bottom: -2px
+
+.ui-kit-header-menu__item-link.ui-kit-header-menu__item-link_active
+    font-family: "MontserratBold", serif
+    color: $black
+
+.sf-menu > li
+    background-color: #fff
+    &:hover
+        background-color: #fff
+.sf-menu > li > a
+    padding: 0
+    color: $gray-dark
+    background-color: #fff
+    &:hover
+        background-color: #fff
+
+.sf-menu a
+    background-color: #fff
+    color: $gray-dark
+    background-color: #fff
+    transition: color .3s ease
+    &:hover
+        background-color: #fff
+        color: $purple
+        text-decoration: none
+        .expand-more-icon
+            color: $purple
+
+.sf-menu a.sf-with-ul
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.sf-menu ul
+    width: 260px
+    top: 140%
+
+.sf-menu li
+    white-space: unset
+
+
+.services__menu-item-link
+    .expand-more-icon
+        transform: rotate(-90deg)

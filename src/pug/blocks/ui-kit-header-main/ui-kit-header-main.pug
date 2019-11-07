@@ -1,0 +1,10 @@
+include ../button/button
+.ui-kit-header-main
+
+    .ui-kit-header-main__logo
+        img.ui-kit-header-main__logo-img(src="../img/Logo.png", alt="logo")
+
+    .ui-kit-header-main__menu-line
+        include ../ui-kit-header-menu/ui-kit-header-menu
+        +button('<span> Login </span>', 'transparent-button')(href='#') 
+        +button('Register', 'purpule-button')(href='#') 

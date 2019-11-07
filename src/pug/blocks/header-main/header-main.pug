@@ -1,0 +1,10 @@
+include ../button/button
+.header-main
+
+    .header-main__logo
+        img.header-main__logo-img(src="../img/Logo.png", alt="logo")
+
+    .header-main__menu-line
+        include ../header-menu/header-menu
+        +button('<span> Войти </span>', 'transparent-button')(href='#') 
+        +button('Зарегистрироваться', 'purpule-button')(href='#') 
