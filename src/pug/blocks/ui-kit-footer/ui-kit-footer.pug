@@ -1,0 +1,65 @@
+include ../input-with-arrow/input-with-arrow
+
+.ui-kit-footer
+
+    .ui-kit-footer-content
+
+        .company-info
+
+            .company-info__logo
+                img.company-info__logo-img(src="../img/Logo.png", alt="logo")
+            p.company-info__text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+
+        .navigation
+            h3 Navigation
+            ul.navigation-items
+                li.navigation-item
+                    a.navigation-item-link(href="#") About us
+                li.navigation-item
+                    a.navigation-item-link(href="#") News
+                li.navigation-item
+                    a.navigation-item-link(href="#") Support
+                li.navigation-item
+                    a.navigation-item-link(href="#") Products
+
+        .about-us
+            h3 About us
+            ul.about-us-items
+                li.about-us-item
+                    a.about-us-item-link(href="#") Who we are
+                li.about-us-item
+                    a.about-us-item-link(href="#") Our team
+                li.about-us-item
+                    a.about-us-item-link(href="#") Careers
+                li.about-us-item
+                    a.about-us-item-link(href="#") Investors
+
+
+        .support-service
+            h3 Support
+            ul.support-service-items
+                li.support-service-item
+                    a.support-service-item-link(href="#") Documentation
+                li.support-service-item
+                    a.support-service-item-link(href="#") Community
+                li.support-service-item
+                    a.support-service-item-link(href="#") Get in Touch
+
+
+        .subscription
+            h3 Subscribe to our newsletter
+            p.subscription-text Receive our latest news and promotions in your inbox!
+            +input-with-arrow('', "subscription", "Your email address", "subscription-id")
+
+
+    hr.page-divider
+
+    .ui-kit-footer-copyright
+
+        .ui-kit-footer-copyright__text-area
+            p.ui-kit-footer-copyright__text Copyright © 2018 Toxin UI Kit. All rights reserved.
+
+        .ui-kit-footer-copyright__social-media
+            i.social-icons.fa.fa-twitter.gradient-color-text
+            i.social-icons.fa.fa-facebook-square.gradient-color-text
+            i.social-icons.fa.fa-instagram.gradient-color-text
