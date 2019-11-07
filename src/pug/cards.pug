@@ -43,6 +43,18 @@ html(lang="en")
 
 			.cards-container-third-column
 				include blocks/datapicker-inline/datapicker-inline
+				+room-short-description('', '888', 'Люкс', '9 990', '145', 5,
+					'url(../img/image1.png)',
+					'url(../img/image2.png)',
+					'url(../img/image1.png)',
+					'url(../img/image2.png)')
+
+				+room-short-description(true, '840', '', '9 900', '65', 4,
+					'url(../img/image2.png)',
+					'url(../img/image1.png)',
+					'url(../img/image2.png)',
+					'url(../img/image1.png)')
+
 
 		script(src="js/libs.min.js")
 

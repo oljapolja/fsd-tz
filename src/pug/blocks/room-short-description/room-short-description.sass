@@ -6,14 +6,20 @@
     border-radius: 4px
     .room-number-price
         position: relative
-        margin-bottom: 18px
+        margin-bottom: 19px
+        .room-number-price__number
+            line-height: 17px
+            font-size: 14px
+        .room-number-price__room-number
+            font-size: 18px
+            line-height: 24px
         &:after
             content: ""
             height: 1px
             width: 100%
             background: rgba(31, 32, 65, 0.1)
             position: absolute
-            bottom: -10px
+            bottom: -11px
 
 .room-short-description__img-area
     width: 270px
@@ -68,13 +74,24 @@
     padding: 10px
     cursor: pointer
 
+.room-short-description__simple-img-carousel
+    .slider-button-prev,
+    .slider-button-next
+        display: none
+    .room-short-description__img
+        &:before,
+        &:after
+            display: none
+
+
+
 .room-short-description__img-carousel
     position: relative
 
 .owl-dots
     position: absolute
-    bottom: 15px
-    right: 15px
+    bottom: 9px
+    right: 10px
 
 .owl-carousel button.owl-dot
     background: transparent
@@ -98,7 +115,7 @@
 
 .room-short-description__feedback-amount
     color: $gray-dark
-    font-size: 12px
+    font-size: 14px
     line-height: 18px
     font-family: "MontserratRegular", serif
     span

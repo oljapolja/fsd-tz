@@ -1,10 +1,16 @@
 include ../room-number-price/room-number-price
 include ../rate-star-pic/rate-star-pic
-mixin room-short-description(roomNumber, addInfo, price, feedbackAmount, ...imgs)
+mixin room-short-description(simpleImg, roomNumber, addInfo, price, feedbackAmount, starsAmount, ...imgs)
+
+    -
+        var addClass="";
+        if (simpleImg) {
+            var addClass="room-short-description__simple-img-carousel";
+        }
 
     .room-short-description
 
-        .room-short-description__img-carousel
+        .room-short-description__img-carousel(class= addClass)
             .room-short-description__img-area.owl-carousel
                 each img in imgs
                     .room-short-description__img(style!='background-image: ' + img)
@@ -21,7 +27,11 @@ mixin room-short-description(roomNumber, addInfo, price, feedbackAmount, ...imgs
             +room-number-price(roomNumber, addInfo, price)
 
             .room-short-description__feedback
-                +rate-star-pic(5, 0)
+                +rate-star-pic(starsAmount, 5 - starsAmount)
                 .room-short-description__feedback-amount
                     span!= feedbackAmount
                     |  Отзывов
+
+
+//- simpleImg - boolean, если картинка без затемнений и стрелочек, то true
+//- иначе ""
