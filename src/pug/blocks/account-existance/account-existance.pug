@@ -1,0 +1,6 @@
+include ../button/button
+mixin account-existance(text, buttonText)
+
+    .account-existance
+        span.text!= text
+        +button(buttonText, 'transparent-button')(href='#') 
