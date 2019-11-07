@@ -1,0 +1,38 @@
+.radio-button
+	margin-bottom: 24px	
+	line-height: 18px
+	color: $gray-dark
+	display: flex
+
+
+.radio-label
+	display: flex
+	align-items: center
+	margin-right: 20px
+	margin-bottom: 0
+	&:last-child
+		margin-right: 0
+	span
+		margin-top: -3px
+
+.visible-radio
+	display: flex
+	align-items: center
+	justify-content: center
+	width: 20px
+	height: 20px
+	background: #FFFFFF
+	border: 1px solid $gray
+	margin-right: 10px
+	border-radius: 10px
+.radio-round
+	width: 12px
+	height: 12px
+	border-radius: 10px
+
+.hidden-radio:checked + .radio-label
+	color: $text
+	.visible-radio
+		border-color: $purple
+		.radio-round
+			background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)

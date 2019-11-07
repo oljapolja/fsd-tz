@@ -1,0 +1,8 @@
+mixin datepicker-section(firstLabel, secondLabel)
+    .datepicker-section
+        .datepicker-section__item
+            label.datepicker-section__label(for="startDate")= firstLabel
+            input.datepicker-section__field.my-datepicker(type="text" id="startDate" placeholder="дд.мм.гггг")            
+        .datepicker-section__item
+            label.datepicker-section__label(for="endDate")= secondLabel
+            input.datepicker-section__field.fake-dadapicker(type="text" id="endDate" placeholder="дд.мм.гггг")

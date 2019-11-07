@@ -1,0 +1,28 @@
+mixin rich-checkbox-items(...arr)
+    //- +expandable-checkbox-list("Заголовок списка", 
+                ["id", "name", "items_text-title", "items_text"], [...])
+        -
+    .rich-checkbox-items
+        each item in arr
+            input.hidden.hidden-checkbox(type="checkbox" id=item[0] name=item[1])
+            label.checkbox-label(for=item[0])
+                div.visible-checkbox
+                .rich-checkbox-items_text-area
+                    .text-title.rich-checkbox-items_text-title=item[2]
+                    .rich-checkbox-items_text=item[3]
+
+
+    //- .rich-checkbox-items
+    //-     input.hidden.hidden-checkbox(type="checkbox" id="wide-hall-id" name="wide-hall")
+    //-     label.checkbox-label(for="wide-hall-id")
+    //-         div.visible-checkbox
+    //-         .rich-checkbox-items_text-area
+    //-             .text-title.rich-checkbox-items_text-title Широкий коридор
+    //-             .rich-checkbox-items_text Ширина коридоров в номере не менее 91 см.
+
+    //-     input.hidden.hidden-checkbox(type="checkbox" id="invalid-care-id" name="invalid-care")
+    //-     label.checkbox-label(for="invalid-care-id")
+    //-         div.visible-checkbox
+    //-         .rich-checkbox-items_text-area
+    //-             .text-title.rich-checkbox-items_text-title Помощник для инвалидов
+    //-             .rich-checkbox-items_text На 1 этаже вас встретит специалист и проводит до номера.

@@ -1,0 +1,34 @@
+mixin radio-button(...arr)
+
+    .radio-button
+        each radio in arr
+            if (radio[4])
+                input.hidden.hidden-radio(type="radio" id=radio[0] value=radio[1] name=radio[2] checked)
+                label.radio-label(for=radio[0])
+                    div.visible-radio
+                        div.radio-round
+                    span=radio[3]
+            else
+                input.hidden.hidden-radio(type="radio" id=radio[0] value=radio[1] name=radio[2])
+                label.radio-label(for=radio[0])
+                    div.visible-radio
+                        div.radio-round
+                    span=radio[3]
+
+
+    //- .radio-button
+    //-     input.hidden.hidden-radio(type="radio" id="male-id" value="male" name="sex")
+    //-     label.radio-label(for="male-id")
+    //-         div.visible-radio
+    //-             div.radio-round
+    //-         span Мужчина
+    
+    //-     input.hidden.hidden-radio(type="radio" id="female-id" value="female" name="sex")
+    //-     label.radio-label(for="female-id")
+    //-         div.visible-radio
+    //-             div.radio-round
+    //-         span Женщина
+
+
+    //- +radio-button("Заголовок списка", 
+    //-        ["id", "value", "name", "text"], [...]) 

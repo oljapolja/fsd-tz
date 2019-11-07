@@ -1,0 +1,8 @@
+mixin filter-datepicker-section(label)
+    .filter-datepicker-section
+        .filter-datepicker-section__item
+            label.filter-datepicker-section__label(for="filterDates")= label
+            input.filter-datepicker-section__field.my-filter-datepicker(type="text" id="filterDates" placeholder="дд.мм.гггг")            
+        //- .filter-datepicker-section__item
+        //-     label.filter-datepicker-section__label(for="endDate")= secondLabel
+        //-     input.filter-datepicker-section__field.fake-dadapicker(type="text" id="endDate" placeholder="дд.мм.гггг")

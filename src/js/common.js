@@ -5,9 +5,5 @@ $(function() {
    });
 
    $("#phone").mask("+7 (999) 999-99-99",{completed:function(){alert("You typed the following: "+this.val());}});
-
-
-
-
-
+   
 });

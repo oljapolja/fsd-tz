@@ -1,0 +1,67 @@
+.price-range-slider__text-area
+    display: flex
+    justify-content: space-between
+    align-items: center
+    font-size: 12px
+    line-height: 15px
+    color: $gray-dark
+    text-transform: uppercase
+    font-family: "MontserratRegular", serif
+    margin-bottom: 23px
+
+
+.price-range-slider
+    width: 266px
+
+.price-range-slider__text
+    font-family: "MontserratBold", serif
+    color: $black
+
+.price-range-slider__info
+    font-family: "MontserratRegular", serif
+    font-size: 12px
+    line-height: 15px
+    color: $gray-dark
+    margin-top: 11px
+
+.price-range-slider__line
+    height: 6px
+    background: #FFFFFF
+    border: 1px solid $gray
+    box-sizing: border-box
+    border-radius: 3px
+    position: relative
+
+.price-range-slider__line-highlighted-wrap
+    position: absolute
+    top: 0
+    right: 50%
+    transform: translate(50%, 0)
+    display: inline-block
+    line-height: 0
+
+
+.price-range-slider__line-highlighted
+    position: relative
+    height: 6px
+    width: 88px
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+    border-radius: 3px
+    display: inline-block
+
+.price-range-slider__line-start,
+.price-range-slider__line-end
+        content: ""
+        display: inline-block
+        height: 16px
+        width: 16px
+        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+        border: 2px solid #FFFFFF
+        border-radius: 100%
+        position: absolute
+        top: -6px
+        left: -13px
+        cursor: pointer
+.price-range-slider__line-end
+        left: unset
+        right: 0

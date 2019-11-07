@@ -1,0 +1,56 @@
+// .hidden-checkbox:checked + .checkbox-label
+// 	.visible-checkbox
+// 		background-image: url(../img/Vector.svg)
+// 		border-color: $purple
+
+// .visible-checkbox
+// 	display: inline-block
+// 	width: 20px
+// 	height: 20px
+// 	background: #FFFFFF
+// 	border: 1px solid $gray
+// 	margin-right: 10px
+// 	border-radius: 4px
+// 	background-image: none
+// 	// background-image: url(../img/Vector.svg)
+// 	background-repeat: no-repeat
+// 	background-position: center
+// 	flex-shrink: 0
+
+// .checkbox-button
+// 	line-height: 18px
+// 	color: $gray-dark
+// .checkbox-label
+// 	display: flex
+// 	align-items: center
+// 	margin-bottom: 10px
+	
+.expandable-checkbox-header
+	display: flex
+	align-items: center
+	cursor: pointer
+	margin-bottom: 17px
+	line-height: 15px
+	font-size: 12px
+	h3
+		display: inline-block
+		margin-bottom: 0
+		margin-right: 40px
+	i
+		font-size: 24px
+		line-height: 15px
+		transition: transform .5s ease
+
+.expandable-checkbox-items
+	display: none
+	font-size: 14px
+	line-height: 18px
+
+.expandable-checkbox-list.on
+	.expandable-checkbox-items
+		display: block
+	.expand-more-icon
+		transform: rotate(180deg)
+
+.expandable-checkbox-list
+	margin-bottom: 20px

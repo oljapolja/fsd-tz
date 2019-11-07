@@ -1,0 +1,22 @@
+.bullet-list
+	max-width: 292px
+
+.bullet-list_items
+	padding: 0
+	margin: 0
+	list-style: none
+	
+.bullet-list_item
+	margin-bottom: 10px
+	position: relative
+	padding-left: 20px
+	&:before
+		content: ""
+		width: 10px
+		height: 10px
+		background-color: $gray
+		border-radius: 10px
+		display: inline-block
+		position: absolute
+		left: 0
+		top: 6px

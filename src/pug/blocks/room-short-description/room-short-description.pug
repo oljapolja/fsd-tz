@@ -1,0 +1,27 @@
+include ../room-number-price/room-number-price
+include ../rate-star-pic/rate-star-pic
+mixin room-short-description(roomNumber, addInfo, price, feedbackAmount, ...imgs)
+
+    .room-short-description
+
+        .room-short-description__img-carousel
+            .room-short-description__img-area.owl-carousel
+                each img in imgs
+                    .room-short-description__img(style!='background-image: ' + img)
+                    
+                
+                //- .room-short-description__img(style="background-image: url(../img/image1.png)")
+                //- .room-short-description__img(style="background-image: url(../img/image2.png)")
+                //- .room-short-description__img(style="background-image: url(../img/image1.png)")
+                //- .room-short-description__img(style="background-image: url(../img/image2.png)")
+            i.material-icons.expand-more-icon.slider-button-prev &#xe5cf;
+            i.material-icons.expand-more-icon.slider-button-next &#xe5cf;
+
+        .room-short-description__info
+            +room-number-price(roomNumber, addInfo, price)
+
+            .room-short-description__feedback
+                +rate-star-pic(5, 0)
+                .room-short-description__feedback-amount
+                    span!= feedbackAmount
+                    |  Отзывов

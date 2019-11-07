@@ -1,0 +1,14 @@
+mixin input-with-arrow(labelText, name, placeholder, id)
+
+    label.input-with-arrow!= labelText
+        .input-with-arrow-area
+            input.input-with-arrow-input(type="text" name=name id=id placeholder=placeholder)
+            button.input-with-arrow-button(type="submit") 
+                i.material-icons.arrow-forward-icon.gradient-color-text &#xe5c8;
+
+
+    //- label.input-subscription Subscription text field
+    //-     .subscription
+    //-         input.subscription-arrow-input(type="text" name="subscription" id= "subscription-id" placeholder="Email")
+    //-         button.subscription-arrow-button(type="submit") 
+    //-             i.material-icons.arrow-forward-icon.gradient-color-text &#xe5c8;

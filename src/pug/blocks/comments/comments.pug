@@ -1,0 +1,33 @@
+include ../like-button/like-button
+mixin comments(...arr)
+    .comments
+        each comment in arr
+            .comment
+                .comment_media
+                    .comment_img-wrap
+                        img.comment_img(src=comment[0], alt="foto").img-responsive
+                    +like-button(comment[1])
+                .comment_text
+                    .text-title!= comment[2]
+                    p!= comment[3]
+                    p!= comment[4]
+
+
+
+
+
+
+    //- .comments
+    //-     .comment
+    //-         .comment_media
+    //-             .comment_img-wrap
+    //-                 img.comment_img(src="../../img/comment_foto_1.jpg", alt="foto").img-responsive
+    //-             +like-button('like-comment-id')
+    //-         .comment_text
+    //-             .text-title Мурад Сарафанов
+    //-             p 5 дней назад
+    //-             p 
+    //-                 |Великолепный матрас на кровати в основной спальне! 
+    //-                 |А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. 
+    //-                 |Выкрикивал комплименты повару — никто не жаловался из соседей.
+    //- comments(["img src", "comment-id", "commentator-name", "when", 'comment-text'],[]...)

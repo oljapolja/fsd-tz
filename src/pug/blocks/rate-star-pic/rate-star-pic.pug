@@ -1,0 +1,19 @@
+mixin rate-star-pic(stars, emptyStar)
+
+    -
+        amountStar = [];
+        for (var i = 0; i < stars; i++) {
+            amountStar[i] = i;
+        }
+
+        amountEmptyStar = [];
+        for (var i = 0; i < emptyStar; i++) {
+            amountEmptyStar[i] = i;
+        }
+
+    .rate-star-pic
+        div
+            each star in amountStar
+                i.material-icons.star-icons.gradient-color-text &#xe838;
+            each emptyStar in amountEmptyStar
+                i.material-icons.empty-star-icons.gradient-color-text &#xe83a;

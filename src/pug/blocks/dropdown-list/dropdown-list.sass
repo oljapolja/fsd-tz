@@ -1,0 +1,123 @@
+.dropdown-list
+	position: relative
+	border-top-right-radius: 4px
+	border-top-left-radius: 4px
+	font-family: "MontserratRegular", serif
+	margin-top: 5px
+	border: 1px solid $gray
+	color: $text
+	width: 320px
+	font-size: 14px
+	line-height: 24px
+	background-color: #fff
+	cursor: pointer
+	margin-bottom: 20px
+	&:focus, &:hover
+		border: 1px solid $gray-dark
+
+.dropdown-list__item-text
+	margin-top: -3px
+
+.dropdown-list_rooms-amount
+	width: 266px
+	.dropdown-list__results
+		width: 266px
+	.dropdown-list__item:last-child
+		margin-bottom: 7px
+
+.dropdown-list__text-area
+	display: flex
+	justify-content: space-between
+	padding: 9px 9px 9px 15px
+
+
+.dropdown-list.on
+	border: 1px solid $gray-dark
+	.dropdown-list__results
+		display: block
+
+
+.dropdown-list__results
+	border: 1px solid $gray-dark
+	color: $text
+	border-bottom-right-radius: 4px
+	border-bottom-left-radius: 4px
+	z-index: 3
+	width: 320px
+	position: absolute
+	top: 100%
+	left: -1px
+	background-color: #fff
+	cursor: auto
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05)
+	display: none
+
+.dropdown-list__items
+	padding: 0
+	margin: 0
+	list-style: none
+	font-family: "MontserratBold", serif
+	text-transform: uppercase
+	font-size: 12px
+	line-height: 15px
+	color: $black
+.dropdown-list__item
+	padding: 0 0 0 14px
+	margin-top: 7px
+	display: flex
+	justify-content: space-between
+	align-items: center
+	&:first-child
+		margin-top: 6px
+	&:last-child
+		margin-bottom: 17px
+
+.dropdown-list__buttons
+	color: $purple
+	text-align: right
+	margin-bottom: 13px
+	margin-top: 19px
+	padding-right: 7px
+	display: flex
+	justify-content: space-between
+	padding-left: 14px
+
+.results-apply-button,
+.results-clear-button
+	padding: 0
+	margin: 0
+
+.counter
+	padding-right: 6px
+	display: flex
+
+
+.counter__field
+	border: none
+	width: 17px
+	font-family: "MontserratBold", serif
+	font-size: 12px
+	line-height: 15px
+	text-transform: uppercase
+	color: $black
+	text-align: center
+	margin: -2px 8px 0 8px
+
+.counter__buton
+	width: 30px
+	height: 30px
+	border-radius: 22px
+	background-color: #fff
+	font-family: $default-font
+	font-size: 18px
+	line-height: 18px
+	cursor: pointer
+.counter__buton_dec
+	border: 1px solid $gray
+	color: $gray
+.counter__buton_inc
+	color: $gray-dark
+	border: 1px solid $gray-dark
+
+.results-clear-button
+	display: none

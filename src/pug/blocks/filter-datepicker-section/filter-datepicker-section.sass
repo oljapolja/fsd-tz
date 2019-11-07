@@ -1,0 +1,232 @@
+.filter-datepicker-section__label
+	font-size: 12px
+	text-transform: uppercase
+	font-family: "MontserratBold", serif
+	color: $black
+	margin-top: 20px
+	margin: 0
+	line-height: 15px
+
+.filter-datepicker-section__field
+	display: block
+	font-family: "MontserratRegular", serif
+	margin-top: 5px
+	border: 1px solid $gray
+	color: $text
+	border-radius: 4px
+	height: 44px
+	padding: 15px 13px
+	font-size: 14px
+	line-height: 18px
+	background-color: #fff
+	&:focus, &:hover
+		border: 1px solid $gray-dark
+
+.filter-datepicker-section__field::-webkit-input-placeholder,
+.filter-datepicker-section__field::-moz-placeholder,
+.filter-datepicker-section__field:-moz-placeholder
+	color: $text
+	opacity: 1
+	font-size: 18px
+
+
+.my-filter-datepicker
+	width: 266px
+	z-index: 1
+
+.datepicker
+	width: 280px
+	height: auto
+	padding: 19px
+	margin-top: -7px
+	background: #FFFFFF
+	border: 1px solid $gray
+	border-color: $gray
+	box-shadow: 0px 10px 20px $gray-light
+	border-radius: 4px
+
+.datepicker--pointer
+	display: none
+
+.datepicker--nav
+	padding: 0
+	margin-bottom: 30px
+	border: none
+	min-height: unset
+	height: 24px
+
+.datepicker--nav-title,
+.datepicker--nav-title i
+	background-color: #fff
+	font-family: "OpenSansdBold"
+	color: $black
+	font-size: 19px
+	line-height: 24px
+
+.datepicker--nav-action
+	display: inline-block
+	width: unset
+	height: unset
+	&:hover
+		background-color: #fff
+
+.datepicker--content
+	padding: 0
+
+.datepicker--days-names
+	margin: 0
+
+.datepicker--day-name
+	padding: 0
+	width: 40px
+	height: 40px
+	font-family: "MontserratBold", serif
+	font-size: 12px
+	line-height: 15px
+	color: $purple
+
+.datepicker--cell
+	font-size: 12px
+	line-height: 15px
+	font-family: "MontserratRegular", serif
+	margin-bottom: 0
+	width: 39.7px
+	height: 40px
+	&:hover
+		background-color: #fff
+
+.datepicker--cell-day, .datepicker--cell.-disabled-, .datepicker--cell.-disabled-.-focus-
+	background-color: #fff
+	border: none
+	color: $gray-dark
+	text-align: center
+
+.datepicker--cell.-other-month-, 
+.datepicker--cell.-other-month-.-disabled-.-focus-
+	color: $gray
+	opacity: 1
+
+.datepicker--cell.-current-
+	border-radius: 22px
+
+.datepicker--cell.-current-,
+.datepicker--cell.-selected-
+	color: #ffffff
+	font-family: "MontserratBold", serif
+
+.datepicker--cell.-current-
+	background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+	&:hover
+		background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+		color: #ffffff
+
+.datepicker--cell.-selected-,
+.datepicker--cell.-selected-.-current-
+	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+	&:hover
+		background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+
+.datepicker--cell.-in-range-
+	background: linear-gradient(180deg, #eee6ff 0%, #e2e8fe 100%)
+	color: $gray-dark
+
+.datepicker--cell.-range-from-,
+.datepicker--cell.-range-from-.-focus-,
+.datepicker--cell.-current-.-range-from-,
+.datepicker--cell.-current-.-range-from-.-focus-,
+.-selected-.datepicker--cell-day.-other-month-.-range-from-,
+	color: #ffffff
+	font-family: "MontserratBold", serif
+	background: linear-gradient(180deg, #eee6ff 0%, #e2e8fe 100%)
+	position: relative
+	border-top-right-radius: 0
+	border-bottom-right-radius: 0
+	border-bottom-left-radius: 22px
+	border-top-left-radius: 22px
+	z-index: 1
+	&:before
+		content: ""
+		background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+		position: absolute
+		z-index: -1
+		width: 100%
+		height: 100%
+		border-radius: 22px
+
+.datepicker--cell.-range-to-,
+.datepicker--cell.-range-to-.-focus-,
+.-selected-.datepicker--cell-day.-other-month-.-range-to-,
+	color: #ffffff
+	font-family: "MontserratBold", serif
+	background: linear-gradient(180deg, #eee6ff 0%, #e2e8fe 100%)
+	border-bottom-left-radius: 0
+	border-top-left-radius: 0
+	border-bottom-right-radius: 22px
+	border-top-right-radius: 22px
+	z-index: 1
+	position: relative
+	&:before
+		content: ""
+		background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+		position: absolute
+		z-index: -1
+		width: 100%
+		height: 100%
+		border-radius: 22px
+
+.filter-datepicker-section
+	.filter-datepicker-section__item:first-child
+		margin-right: 16px
+
+.filter-datepicker-section__item
+	position: relative
+	display: inline-block
+	z-index: 1
+	margin-bottom: 20px
+	line-height: 0
+
+.datepicker--buttons
+	border: none
+	padding: 0
+	margin: 20px 0 0 0
+	padding: 0
+	font-size: 12px
+	line-height: 15px
+	text-transform: uppercase
+	font-family: "MontserratBold", serif
+	justify-content: space-between
+	&:hover
+		.datepicker--button
+			background-color: #fff
+
+.datepicker--button
+	height: unset
+
+.datepicker--button[data-action=clear]
+	color: $gray-dark
+	justify-content: flex-start
+	order: 0
+
+.datepicker--button[data-action=apply]
+	order: 1
+	justify-content: flex-end
+	color: $purple
+
+
+.filter-datepicker-section
+	position: relative	
+
+// .date_range-class
+// 	display: none
+// 	position: absolute
+// 	&.on
+// 		display: block	
+	
+.date_range-class
+	// display: none
+	width: 0
+	padding: 0
+	height: 0
+	border: none
+	position: absolute
+	display: block

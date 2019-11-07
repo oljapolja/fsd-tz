@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+html(lang="en")
+
+	head
+
+		meta(charset="utf-8")
+		//- <base href="/">
+
+		title New project
+		meta(name="description" content="Создание адаптивного сайта")
+
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+		
+		//-  Template Basic Images Start
+		meta(property="og:image" content="path/to/image.jpg")
+		link(rel="icon" href="img/favicon/favicon.ico")
+		link(rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png")
+		//- Template Basic Images End
+		
+		//- Custom Browsers Color Start
+		meta(name="theme-color" content="#000")
+		//- Custom Browsers Color End
+
+		link(rel="stylesheet" href="css/main.min.css")
+
+
+
+	body
+		include blocks/input-text/input-text
+		include blocks/input-with-arrow/input-with-arrow
+		include blocks/dropdown-list/dropdown-list
+		include blocks/datepicker-section/datepicker-section
+		include blocks/filter-datepicker-section/filter-datepicker-section
+		include blocks/expandable-checkbox-list/expandable-checkbox-list
+		include blocks/benefits/benefits
+		include blocks/checkbox-buttons/checkbox-buttons
+		include blocks/radio-button/radio-button
+		include blocks/toggle-button/toggle-button
+		include blocks/like-button/like-button
+		include blocks/rate-star-pic/rate-star-pic
+		include blocks/rich-checkbox-items/rich-checkbox-items
+		include blocks/price-range-slider/price-range-slider
+		include blocks/bullet-list/bullet-list
+		include blocks/comments/comments
+
+		.form-elements-container
+			.form-elements-container__left-column
+				+input-text('Text field', "name", "Email", "email-id")
+				+input-text('Text field', "name", "", "email-id")(value="This is pretty awesome" autofocus)
+				
+				h3 Dropdown
+				+dropdown-list("guests-list")
+
+				+input-text('Masked Text field', "birthday", "дд.мм.гггг", "birthday-id")
+				+datepicker-section('date Dropdown','date Dropdown')
+				+filter-datepicker-section('filter date dropdown')
+				+input-with-arrow('Subscription text field', "subscription", "Email", "subscription-id")
+				
+				h3 Dropdown
+				+dropdown-list("rooms-list")
+
+				h3 Dropdown
+				+dropdown-list("rooms-list")(class="on")
+
+				+expandable-checkbox-list("Expandable checkbox list", 
+				["breakfast-id", "breakfast", "Завтрак"],
+				["desk-id", "desk", "Письменный стол"],
+				["baby-chair-id", "baby-chair", "Стул для кормления"],
+				["baby-bed-id", "baby-bed", "Кроватка"],
+				["TV-id", "TV", "Телевизор"],
+				["shampoo-id", "shampoo", "Шампунь"])
+
+				+expandable-checkbox-list("Expandable checkbox list", 
+				["breakfast-id2", "breakfast2", "Завтрак"],
+				["desk-id2", "desk2", "Письменный стол"],
+				["baby-chair-id2", "baby-chair2", "Стул для кормления"],
+				["baby-bed-id2", "baby-bed2", "Кроватка"],
+				["TV-id2", "TV2", "Телевизор"],
+				["shampoo-id2", "shampoo2", "Шампунь"],
+				["TV-id2", "TV2", "Телевизор"],
+				["shampoo-id2", "shampoo2", "Шампунь"])(class="on ui-kit-expandable-checkbox-list")
+
+				+benefits(
+					['face-icons, gradient-color-text', '&#xe24e;', 'Комфорт', 'Шумопоглощающие стены'],
+					['house-icons, gradient-color-text', '&#xe7f1;', 'Удобство', 'Окно в каждой из спален'])
+
+			.form-elements-container__right-column
+				.form-elements-container__right-column-elements
+					.form-elements-container__right-column-left-elements
+						h3 Checkbox Buttons
+						+checkbox-buttons('',
+							["smoking-allowance-id", "smoking-allowance", "Можно курить"],
+							["pets-allowance-id", "pets-allowance", "Можно с питомцами"],
+							["invitation-allowance-id", "invitation-allowance", "Можно пригласить гостей (до 10 человек)"]
+						)
+
+						h3 Radio Buttons
+						+radio-button(['male-id','male','sex','Мужчина', true],
+							['female-id','female','sex','Женщина'])
+
+						h3 Toggle
+						.toggle-buttons
+							+toggle-button("recive-suggestion-id", "recive-suggestion", 'Получать спецпредложения', true)
+							+toggle-button("recive-suggestion-id", "recive-suggestion", 'Получать спецпредложения')
+
+						h3 Like button
+						.like-buttons
+							+like-button('like2-id')
+							+like-button('like12-id', true)
+
+						h3 Rate button
+						.rate-stars
+							+rate-star-pic(4, 1)
+							+rate-star-pic(5, 0)
+
+						h3 Dropdown
+						+dropdown-list("guests-list")(class="on")
+
+						h3 Rich Checkbox Buttons
+						+rich-checkbox-items(
+							['wide-hall-id', 'wide-hall', 'Широкий коридор', 'Ширина коридоров в номере не менее 91 см.'],
+							['invalid-care-id', 'invalid-care', 'Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.'])
+
+					.form-elements-container__right-column-right-elements
+						+price-range-slider("Range Slider", "5 000₽ - 10 000₽")
+
+						h3 Buttons
+						.buttons
+							.first-buttons-line
+								+button('Click me', 'purpule-button')(href='#')
+								+button('Click me', 'purpule-button')(href='#')
+							.second-buttons-line
+								+button('<span> Click me </span>', 'transparent-button')(href='#')
+								+button('<span> Click me </span>', 'transparent-button')(href='#') 
+							.third-buttons-line
+								+button('Click me', 'link-purple-button')(href='#') 
+								+button('Click me', 'link-gray-button')(href='#') 
+
+							+button('Перейти к оплате <i class="material-icons arrow-forward-icon"> &#xe5c8;</i>', 'purpule-button long-button')(href='#') 
+
+						h3 Pagination
+						include blocks/pagination/pagination
+
+						h3 Dropdown
+						+dropdown-list("guests-list")(class="on")
+
+						h3 Bullet list
+						+bullet-list('Нельзя с питомцами',
+							'Без вечеринок и мероприятий', 
+							'Время прибытия &mdash; после 13:00, а выезд до 12:00')
+
+				.form-elements-container__right-column-comment
+					+comments(["../../img/comment_foto_1.jpg", 'like-comment-id', ' Мурад Сарафанов', '5 дней назад', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'])
+
+		script(src="js/libs.min.js")
+
+
+
+
+

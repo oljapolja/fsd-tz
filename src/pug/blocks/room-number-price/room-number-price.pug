@@ -1,0 +1,11 @@
+mixin room-number-price(roomNumber, roomAddInfo, roomPrice)
+
+    .room-number-price
+
+        .room-number-price__number № 
+            span.room-number-price__room-number!= roomNumber
+            span.room-number-price__number-lux!= roomAddInfo
+
+        .room-number-price__price
+            span.room-number-price__room-price!= roomPrice + "₽"
+            |  в сутки

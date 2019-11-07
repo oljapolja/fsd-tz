@@ -1,0 +1,39 @@
+.like-button
+	line-height: 0
+    display: inline-block
+    
+.visible-like
+	display: flex
+	align-items: center
+	justify-content: flex-start
+	width: 40px
+	height: 20px
+	border: 1px solid $gray
+	border-radius: 10px
+	margin-right: 10px
+
+.visible-like
+    margin: 0
+    font-size: 10px
+    line-height: 12px
+    color: $gray
+    justify-content: space-between
+    i
+        margin-left: 5px
+    span
+        margin-right: 10px
+        &:after
+            content: '12'
+    .hard-icons
+        display: none
+
+.hidden-like:checked + .like-label
+	.visible-like
+		border-color: $purple
+		color: $purple
+		.hard-icons
+			display: block
+		.empty-hard-icons
+			display: none
+		span:after
+			content: '13'

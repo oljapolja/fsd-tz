@@ -1,0 +1,72 @@
+include ../button/button
+
+mixin dropdown-list(dropdownName)
+
+    if (dropdownName == "guests-list")
+        .dropdown-list.dropdown-list_guests-amount.guests-amount(id="guests-list")&attributes(attributes)
+            .dropdown-list__text-area
+                span.guests-amount_default-text Сколько гостей 
+                i.material-icons.expand-more-icon &#xe5cf;
+            .dropdown-list__results
+                ul.dropdown-list__items
+                    li.dropdown-list__item
+                        span.dropdown-list__item-text.guests-amount_item-text Взрослые
+                        .counter
+                            button.counter__buton.counter__buton_dec(type="button") 
+                                span -
+                            input.counter__field.could-be-clean(type="text" value="0" data-min="0" data-max="20" id="adults")
+                            button.counter__buton.counter__buton_inc(type="button") 
+                                span +
+                    li.dropdown-list__item
+                        span.dropdown-list__item-text.guests-amount_item-text Дети
+                        .counter
+                            button.counter__buton.counter__buton_dec(type="button") 
+                                span -
+                            input.counter__field.could-be-clean(type="text" value="0" data-min="0" data-max="20" id="kids")
+                            button.counter__buton.counter__buton_inc(type="button") 
+                                span +
+                    li.dropdown-list__item
+                        span.dropdown-list__item-text.guests-amount_item-text Младенцы
+                        .counter
+                            button.counter__buton.counter__buton_dec(type="button") 
+                                span -
+                            input.counter__field.could-be-clean(type="text" value="0" data-min="0" data-max="20" id="babies")
+                            button.counter__buton.counter__buton_inc(type="button") 
+                                span +
+                    li.dropdown-list__buttons(value="apply" id=".select-apply-id") 
+                        .results-clrear-button-wrap
+                            +button('Очистить', 'link-gray-button, results-clear-button')(href='#') 
+                            //- a.results-clear-button.button.link-gray-button(href="#" id="results-clear-button-id") Очистить
+                        a.results-apply-button.button.link-purple-button(href="#" id="results-apply-button-id") Применить
+
+    else if (dropdownName == "rooms-list")
+        .dropdown-list.dropdown-list_rooms-amount.rooms-amount(id="rooms-list")&attributes(attributes)
+            .dropdown-list__text-area
+                span.rooms-amount_default-text Количество комнат
+                i.material-icons.expand-more-icon &#xe5cf;
+            .dropdown-list__results
+                ul.dropdown-list__items
+                    li.dropdown-list__item 
+                        span.dropdown-list__item-text.rooms-amount_item-text Спальни
+                        .counter
+                            button.counter__buton.counter__buton_dec(type="button") 
+                                span -
+                            input.counter__field.directly-to-text-area(type="text" value="0" data-min="0" data-max="20" id="bedrooms")
+                            button.counter__buton.counter__buton_inc(type="button") 
+                                span +
+                    li.dropdown-list__item 
+                        span.dropdown-list__item-text.rooms-amount_item-text Кровати
+                        .counter
+                            button.counter__buton.counter__buton_dec(type="button") 
+                                span -
+                            input.counter__field.directly-to-text-area(type="text" value="0" data-min="0" data-max="20" id="beds")
+                            button.counter__buton.counter__buton_inc(type="button") 
+                                span +
+                    li.dropdown-list__item 
+                        span.dropdown-list__item-text.rooms-amount_item-text Ванные комнаты
+                        .counter
+                            button.counter__buton.counter__buton_dec(type="button") 
+                                span -
+                            input.counter__field.directly-to-text-area(type="text" value="0" data-min="0" data-max="20" id="bathrooms")
+                            button.counter__buton.counter__buton_inc(type="button") 
+                                span +

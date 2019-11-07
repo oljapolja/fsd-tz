@@ -1,0 +1,26 @@
+mixin toggle-button(id, name, text, checked)
+
+    .toggle-button
+        if (checked)
+            input.hidden.hidden-toggle(type="checkbox" id=id name=name checked)
+            label.toggle-label(for=id)
+                div.visible-toggle
+                    div.toggle-round
+                span!=text
+        else
+            input.hidden.hidden-toggle(type="checkbox" id=id name=name)
+            label.toggle-label(for=id)
+                div.visible-toggle
+                    div.toggle-round
+                span!=text
+
+    //- .toggle-button
+    //-     input.hidden.hidden-toggle(type="checkbox" id="recive-suggestion-id" name="recive-suggestion")
+    //-     label.toggle-label(for="recive-suggestion-id")
+    //-         div.visible-toggle
+    //-             div.toggle-round
+    //-         span Получать спецпредложения
+
+    //- +radio-button(id, name, text) 
+
+    

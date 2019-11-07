@@ -1,0 +1,33 @@
+.hidden-checkbox:checked + .checkbox-label
+	.visible-checkbox
+		background-image: url(../img/Vector.svg)
+		border-color: $purple
+
+.visible-checkbox
+	display: inline-block
+	width: 20px
+	height: 20px
+	background: #FFFFFF
+	border: 1px solid $gray
+	margin-right: 10px
+	border-radius: 4px
+	background-image: none
+	// background-image: url(../img/Vector.svg)
+	background-repeat: no-repeat
+	background-position: center
+	flex-shrink: 0
+    
+.rich-checkbox-items	
+	.checkbox-label
+		max-width: 262px
+		align-items: flex-start
+.rich-checkbox-items_text-title
+	line-height: 18px
+	display: block
+	margin-bottom: 5px
+.rich-checkbox-items_text
+	font-size: 12px
+	line-height: 14px
+
+.rich-checkbox-items_text-area
+	margin-top: 1px

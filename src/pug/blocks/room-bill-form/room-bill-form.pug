@@ -1,0 +1,37 @@
+include ../button/button
+include ../room-number-price/room-number-price
+include ../dropdown-list/dropdown-list
+mixin room-bill-form(price)
+
+    form.room-bill-form(id="room-bill")
+        +room-number-price('888', 'Люкс', price)
+        include ../datepicker-section/datepicker-section
+        +dropdown-list("guests-list")
+
+        .room-bill-form__period-price
+            .room-bill-form__period!= price + "₽ x "
+                span 4
+                |  суток
+
+            .room-bill-form__price
+                span 39&nbsp;960
+                | ₽
+
+        .room-bill-form__service-charge
+            .room-bill-form__service-charge-text-area
+                .room-bill-form__service-charge-text Сбор за услуги: скидка 2&nbsp;179₽
+                .room-bill-form__service-charge-info i
+            .room-bill-form__service-charge-price 0₽
+
+        .room-bill-form__additional-service
+            .room-bill-form__additional-service-text-area
+                .room-bill-form__additional-service-text Сбор за дополнительные услуги
+                .room-bill-form__additional-service-info i
+            .room-bill-form__sadditional-service-price 300₽
+
+        .room-bill-form__total-price
+            .room-bill-form__total-price-text-area Итого
+            .room-bill-form__ellipsis
+            .room-bill-form__total-price-price 38&nbsp;081₽
+
+        +button('Забронировать <i class="material-icons arrow-forward-icon"> &#xe5c8;</i>', 'purpule-button long-button')

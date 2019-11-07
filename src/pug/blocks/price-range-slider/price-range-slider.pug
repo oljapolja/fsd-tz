@@ -1,0 +1,29 @@
+mixin price-range-slider(h3, priceRange, sliderInfo)
+
+
+    .price-range-slider
+        .price-range-slider__text-area
+            .price-range-slider__text= h3
+            .price-range-slider__text-range= priceRange
+
+        .price-range-slider__line
+            .price-range-slider__line-highlighted-wrap
+                .price-range-slider__line-highlighted
+                    .price-range-slider__line-start
+                    .price-range-slider__line-end
+
+        if (sliderInfo)
+            .price-range-slider__info= sliderInfo
+
+//- .price-range-slider
+//-     .price-range-slider__text-area
+//-         .price-range-slider__text Диапазон цены
+//-         .price-range-slider__text-range 5 000₽ - 10 000₽
+
+//-     .price-range-slider__line
+//-         .price-range-slider__line-highlighted-wrap
+//-             .price-range-slider__line-highlighted
+//-                 .price-range-slider__line-start
+//-                 .price-range-slider__line-end
+
+//-     .price-range-slider__info Стоимость за сутки пребывания в номере

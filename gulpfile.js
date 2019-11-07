@@ -35,6 +35,7 @@ const paths = {
         html: 'src/pug/*.pug',
         pugWatch: 'src/pug/**/*.pug',
         js: 'src/js/**/*.js',
+	jsBlocks: 'src/pug/blocks/**/*.js',
         jsLib: [
             'node_modules/jquery/dist/jquery.min.js',
    	        'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
@@ -104,11 +105,21 @@ gulp.task('scripts_lib', function() {
     .pipe(gulp.dest('src/js'))    //сразу записывваем только в src, потом в gulp.task('scripts') складываем с common.js в один файл
 });
 
-// задание для суммирования файла библиотек и кастомного файлф со скриптами, запись в dist + отображение js-скриптов в browser-Sync
+
+// задание для сборки js-блоков в один минимизированный blocks.min.js 
+gulp.task('scripts_blocks', function() {
+    return gulp.src(paths.src.jsBlocks)
+    .pipe(concat('blocks.min.js'))
+    .pipe(terser())
+    .pipe(gulp.dest('src/js'))    //сразу записывваем только в src, потом в gulp.task('scripts') складываем с common.js в один файл
+});
+
+// задание для суммирования файла библиотек и кастомного файла со скриптами, запись в dist + отображение js-скриптов в browser-Sync
 gulp.task('scripts', function() {
 //    return gulp.src(paths.src.js) суммирует так, что common.js идет первым, следовательно пропишем ручками
     return gulp.src([
         'src/js/libs.min.js',
+	'src/js/blocks.min.js',
         'src/js/common.js', // Always at the end
         ])
     .pipe(concat('libs.min.js'))        //суммируем в один libs.min.js
@@ -197,13 +208,14 @@ gulp.task('watch', function() {
     gulp.watch(paths.src.sass, gulp.parallel('sass')); //следим за sass
     gulp.watch(paths.src.pugWatch, gulp.series('cleanCode','code'));    //следим за за всеми pug. При изменении любого pug удаляется index.html в папке dist, потом из src/pug index.pug по-новому собирается (с учетом измененного файла) в dist/ index.html
     gulp.watch(paths.src.js, gulp.parallel('scripts')); //следим за js
+    gulp.watch(paths.src.jsBlocks, gulp.parallel('scripts_blocks')); //следим за js- блоков, при изменении любого, пересобирается blocks.min.js и далее выполняется scripts_blocks
     gulp.watch(paths.src.fonts, gulp.series('cleanFonts', 'fonts'));//следим за fonts, при изменении сначала удаляем всю папку в dist, потом переносим из src
     gulp.watch(paths.src.img, gulp.series('cleanImg', 'img'));//следим за img, при изменении сначала удаляем всю папку в dist, потом перегосим из src
 //    gulp.watch([paths.src.sass, paths.src.html, paths.src.js], gulp.parallel('build'));
 });
 
 // заполняем папку dist готовым материалом
-gulp.task('prod_build', gulp.series('scripts_lib', 'cleanFonts', 'fonts', 'code', 'sass', 'scripts', 'cleanImg', 'img'));
+gulp.task('prod_build', gulp.series('scripts_lib', 'scripts_blocks', 'cleanFonts', 'fonts', 'code', 'sass', 'scripts', 'cleanImg', 'img'));
 
 // по дефолту вызываем нужные таски, вызываем в папке gulp
 gulp.task('default', gulp.parallel('prod_build', 'watch', 'browser-sync'));

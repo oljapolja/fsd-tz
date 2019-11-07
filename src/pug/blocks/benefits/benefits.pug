@@ -1,0 +1,37 @@
+mixin benefits(...arr)
+
+
+    .benefits
+        each benefit in arr
+            -
+                var allMods = '';
+                if(typeof(benefit[0]) !== 'undefined' && benefit[0]) {
+                    var modsList = benefit[0].split(',');
+                    for (var i = 0; i < modsList.length; i++) {
+                        allMods = allMods + ' ' + modsList[i].trim();
+                    }
+                }
+
+            .benefit
+                i.material-icons(class=allMods)!= benefit[1]
+                .benefit_info
+                    .benefit_title!= benefit[2]
+                    p!= benefit[3]
+
+ 
+    //- .benefits
+    //-     .benefit
+    //-         i.material-icons.face-icons.gradient-color-text &#xe24e;
+    //-         .benefit_info
+    //-             .text-title.benefit_title Комфорт
+    //-             p Шумопоглощающие стены
+    //-     .benefit
+    //-         i.material-icons.house-icons.gradient-color-text &#xe7f1;
+    //-         .benefit_info
+    //-             .text-title.benefit_title Удобство
+    //-             p Окно в каждой из спален
+
+
+    //- +benefits("Заголовок списка", 
+    //-        ["icon-class", "icon-text", "benefit_title", "text"], [...]) 
+    

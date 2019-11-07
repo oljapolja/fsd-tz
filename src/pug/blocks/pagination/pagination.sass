@@ -1,0 +1,59 @@
+.pagination__items
+    margin: 0
+    padding: 0
+    list-style: none
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    margin-bottom: 11px
+
+
+.pagination__item
+    display: inline-block
+    font-size: 12px
+    line-height: 15px
+    font-family: "MontserratRegular", serif
+
+
+.pagination__item a,
+.pagination__item span
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 40px
+    height: 40px
+
+.pagination__active-item,
+.pagination__next-item
+    color: $gray-dark
+    text-decoration: none
+    &:hover
+        color: $gray-dark
+
+.pagination__next-item:hover
+    text-decoration: none
+
+
+.pagination__nonactive-item
+    color: #ffffff
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+    border-radius: 100%
+    font-family: "MontserratBold", serif
+
+.pagination__next-item 
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+    border-radius: 100%
+
+
+.pagination__amount-of-variants
+    display: inline-block
+    text-align: center
+    margin-left: 6px
+    line-height: 16px
+    font-size: 14px
+
+
+.pagination
+    display: flex
+    flex-direction: column
+    justify-content: center

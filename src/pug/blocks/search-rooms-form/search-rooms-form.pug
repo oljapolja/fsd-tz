@@ -1,0 +1,11 @@
+include ../button/button
+include ../dropdown-list/dropdown-list
+include ../datepicker-section/datepicker-section
+form.search-rooms-form(id="search")
+    h1 Найдём номера под ваши пожелания
+    +datepicker-section('Прибытие','Выезд')
+
+    h3 Гости
+    +dropdown-list("guests-list")
+
+    +button('Подобрать номер <i class="material-icons arrow-forward-icon"> &#xe5c8;</i>', 'purpule-button long-button')

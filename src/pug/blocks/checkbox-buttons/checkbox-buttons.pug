@@ -1,0 +1,23 @@
+mixin checkbox-buttons(expandableCheckboxClass, ...arr)
+
+    .checkbox-buttons
+        each item in arr
+            .checkbox-button(class!= expandableCheckboxClass)
+                input.hidden.hidden-checkbox(type="checkbox" id=item[0] name=item[1])
+                label.checkbox-label(for=item[0])
+                    div.visible-checkbox
+                    span=item[2]
+
+
+
+
+
+//- .checkbox-button
+//-     input.hidden.hidden-checkbox(type="checkbox" id="smoking-allowance-id" name="smoking-allowance")
+//-     label.checkbox-label(for="smoking-allowance-id")
+//-         div.visible-checkbox
+//-         span Можно курить (class!= expandable-checkbox-class)
+
+
+//- expandable-checkbox-class --- если введен, то добавляем к checkbox-button, если нет
+//-  тогда оюычный checkbox-button

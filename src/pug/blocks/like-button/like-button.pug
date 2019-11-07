@@ -1,0 +1,26 @@
+mixin like-button(id, checked)
+    .like-button
+        if (checked)
+            input.hidden.hidden-like(type="checkbox" id=id checked)
+            label.like-label(for=id)
+                div.visible-like
+                    i.material-icons.empty-hard-icons &#xe87e;
+                    i.material-icons.hard-icons &#xe87d;
+                    span
+        else
+            input.hidden.hidden-like(type="checkbox" id=id)
+            label.like-label(for=id)
+                div.visible-like
+                    i.material-icons.empty-hard-icons &#xe87e;
+                    i.material-icons.hard-icons &#xe87d;
+                    span
+
+    //- .like-button
+    //-     input.hidden.hidden-like(type="checkbox" id="like-id" name="like")
+    //-     label.like-label(for="like-id")
+    //-         div.visible-like
+    //-             i.material-icons.empty-hard-icons &#xe87e;
+    //-             i.material-icons.hard-icons &#xe87d;
+    //-             span
+
+    //- checked - boolean

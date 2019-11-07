@@ -98,6 +98,79 @@ p
 input, label
 	cursor: pointer
 
+form
+	width: 380px
+	padding: 40px 30px 30px 30px
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2)
+	border-radius: 4px
+
+
+.text-title
+	font-family: "MontserratBold", serif
+
+.material-icons 
+	font-family: "MaterialIcons"
+	font-weight: normal
+	font-style: normal
+	font-size: 24px
+	display: inline-block
+	line-height: 1
+	text-transform: none
+	letter-spacing: normal
+	word-wrap: normal
+	white-space: nowrap
+	direction: ltr
+
+
+	// Support for all WebKit browsers.
+	-webkit-font-smoothing: antialiased
+	// Support for Safari and Chrome.
+	text-rendering: optimizeLegibility
+	// Support for Firefox.
+	-moz-osx-font-smoothing: grayscale
+	// Support for IE.
+	font-feature-settings: 'liga'
+
+.house-icons, .face-icons, .fier-icons
+	font-size: 48px
+	line-height: 41px
+
+.star-icons, .empty-star-icons
+	font-size: 24px
+	line-height: 20px
+
+
+.hard-icons, .empty-hard-icons
+	font-size: 10px
+	line-height: 9px
+
+.arrow-forward-icon
+	font-size: 24px
+	line-height: 24px
+	color: #ffffff
+
+.expand-more-icon
+	font-size: 24px
+	line-height: 24px
+	color: rgba(31, 32, 65, 0.5)
+
+.social-icons
+	font-size: 24px
+	line-height: 23px
+	padding-left: 20px
+	&:first-child
+		padding-left: 0
+
+
+
+.checkbox-button
+	line-height: 18px
+	color: $gray-dark
+.checkbox-label
+	display: flex
+	align-items: center
+	margin-bottom: 10px
+
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 .lazy
@@ -109,7 +182,153 @@ input, label
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
+// UI KIT
+
 .colors-type-container
 	margin: 145px 191px 145px 150px
 	display: flex
 	justify-content: space-between
+
+.form-elements-container
+	padding: 143px 141px 132px 141px
+	display: flex
+	justify-content: space-between
+
+.form-elements-container__left-column
+	margin-right: 126px
+	max-width: 320px
+	.input-text
+		margin-bottom: 20px
+		line-height: 15px
+	#guests-list
+		margin-bottom: 23px
+	#rooms-list
+		margin-bottom: 20px
+	.datepicker-section
+		margin-top: 20px
+	.filter-datepicker-section
+		margin-top: 21px
+	.input-with-arrow
+		margin-top: 21px
+		margin-bottom: 100px
+	.expandable-checkbox-list
+		margin-top: 173px
+	.ui-kit-expandable-checkbox-list
+		margin-top: 49px
+	.benefits
+		padding-top: 20px
+		.benefit:last-child
+			margin-bottom: 0
+
+.form-elements-container__right-column-elements
+	display: flex
+	justify-content: space-between
+
+.form-elements-container__right-column-left-elements
+	margin-right: 72px
+	.checkbox-buttons
+		margin-top: 17px
+		margin-bottom: 40px
+	.radio-button
+		margin-top: 16px
+		margin-bottom: 41px
+	.toggle-buttons
+		margin-top: 16px
+		margin-bottom: 44px
+		.toggle-button:first-child
+			.toggle-label
+				margin-bottom: 14px
+	.like-buttons
+		display: flex
+		margin-top: 16px
+		margin-bottom: 32px
+		.like-button:first-child
+			margin-right: 10px
+		[for=like2-id]
+			.visible-like
+				span:after
+					content: '2'
+		#like2-id.hidden-like:checked + .like-label
+			.visible-like
+				span:after
+					content: '3'
+		[for=like12-id]
+			.visible-like
+				span:after
+					content: '11'
+		#like12-id.hidden-like:checked + .like-label
+			.visible-like
+				span:after
+					content: '12'
+	.rate-stars
+		display: flex
+		margin-top: 16px
+		margin-bottom: 196px
+		.rate-star-pic:first-child
+			margin-right: 20px
+	.dropdown-list
+		margin-bottom: 256px
+	.rich-checkbox-items
+		margin-top: 16px
+	
+.form-elements-container__right-column-right-elements
+	.price-range-slider
+		margin-bottom: 43px
+	.buttons
+		margin-top: 16px
+		max-width: 320px
+		margin-bottom: 40px
+		.button
+			margin-right: 20px
+		.long-button
+			margin-right: 0
+	.first-buttons-line
+		margin-bottom: 30px
+		.purpule-button:last-child
+			opacity: 0.5
+	.second-buttons-line
+		margin-bottom: 31px
+		.transparent-button:last-child
+			background: linear-gradient(180deg, rgba(188, 156, 255, .5) 0%, rgba(139, 164, 249, .5) 100%)
+	.long-button
+		margin-top: 0
+		margin-bottom: 0
+	.third-buttons-line
+		display: flex
+		margin-bottom: 30px
+	.pagination
+		margin-top: 16px
+		margin-bottom: 237px
+		.pagination__items
+			justify-content: flex-start
+		.pagination__amount-of-variants
+			text-align: left
+	.dropdown-list
+		margin-bottom: 256px
+	.bullet-list
+		margin-top: 13px
+
+.form-elements-container__right-column
+	display: flex
+	// justify-content: flex-end
+	flex-direction: column
+	justify-content: space-between
+
+.form-elements-container__right-column-comment
+	.comment
+		margin-bottom: 8px
+		.like-button
+			text-align: center
+
+// .form-elements-container__right-column-elements
+// 	align-self: flex-start
+
+.cards-container
+	padding: 150px 140px 140px 140px
+	background: #F4F4F6
+	.search-rooms-form
+		margin-bottom: 40px
+
+.cards-container-first-column,
+.cards-container-second-column
+	margin-right: 40px

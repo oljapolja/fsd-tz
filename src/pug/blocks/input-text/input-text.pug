@@ -1,0 +1,10 @@
+mixin input-text(labelText, name, placeholder, id)
+
+    label.input-text!= labelText
+        input.input-field(type="text" name=name placeholder=placeholder id=id)&attributes(attributes)
+
+    //- label.input-text Text field
+    //-     input.input-field(type="text" name="name" placeholder="Email" id="id")
+
+    //- label.input-text Masked Text field
+    //-     input.input-field.birthday-masked-input(type="text" name="birthday" id= "birthday" placeholder="дд.мм.гггг")

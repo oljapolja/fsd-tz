@@ -1,0 +1,65 @@
+.button
+	display: inline-block
+	border: none
+	text-decoration: none
+	padding: 14px 20px 15px 20px
+	border-radius: 22px
+	font-size: 12px
+	line-height: 15px
+	text-transform: uppercase
+	font-family: "MontserratBold", serif
+	text-align: center
+	position: relative
+	outline: none
+	transition: opacity .2s ease
+	cursor: pointer
+	&:focus, &:hover
+		text-decoration: none
+		
+.purpule-button
+	color: #ffffff
+	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+	&:focus, &:hover
+		color: #ffffff
+		opacity: 0.5
+
+.transparent-button
+	color: $purple
+	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+	padding: 2px
+	// display: flex
+	// align-items: center
+	// justify-content: center
+	span
+		background-color: #fff
+		border-radius: 20px
+		display: block
+		padding-top: 12px
+		height: 40px
+		width: 95px
+	&:focus, &:hover
+		color: $purple
+		background: linear-gradient(180deg, rgba(188, 156, 255, .5) 0%, rgba(139, 164, 249, .5) 100%)
+		
+.link-purple-button
+	color: $purple
+	padding: 0
+	&:focus, &:hover
+		color: $purple
+.link-gray-button
+	padding: 0
+	color: $gray-dark
+	&:focus, &:hover
+		color: $gray-dark
+
+.long-button
+	width: 320px
+	color: #ffffff
+	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+	margin: 0
+	margin-top: 20px
+	i
+		float: right
+		font-size: 24px
+		line-height: 15px
+		margin-right: -10px

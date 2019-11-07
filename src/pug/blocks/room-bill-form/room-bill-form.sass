@@ -1,0 +1,87 @@
+.room-bill-form
+    display: inline-block
+    font-size: 14px
+    line-height: 24px
+    font-family: MontserratRegular,sans-serif
+    color: $text
+    .room-number-price
+        margin-bottom: 20px
+    .dropdown-list
+        margin-top: 0
+
+.room-bill-form__period-price,
+.room-bill-form__service-charge,
+.room-bill-form__additional-service,
+.room-bill-form__total-price
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    margin-bottom: 10px
+
+.room-bill-form__additional-service-text-area,
+.room-bill-form__service-charge-text-area
+    display: inline-flex
+    justify-content: flex-start
+    align-items: flex-start
+
+.room-bill-form__service-charge-text,
+.room-bill-form__additional-service-text
+    display: inline-block
+    width: 217px
+
+
+.room-bill-form__service-charge-info,
+.room-bill-form__additional-service-info
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    color: $gray
+    width: 20px
+    height: 20px
+    border: 1px solid $gray
+    border-radius: 100%
+    position: relative
+    margin-left: 5px
+    margin-top: 2px
+    &:hover
+        &:after
+            content: "service-charge-info"
+            display: inline-block
+            position: absolute
+            width: 240px
+            bottom: 100%
+            margin-bottom: 5px
+            padding-left: 10px
+            right: 5%
+            border: 1px solid $purple
+            border-radius: 4px
+            color: $text
+            background-color: #fff
+
+.room-bill-form__additional-service-info
+    &:hover
+        &:after
+            content: "additional-service-info"
+
+.room-bill-form__total-price
+    margin-top: 20px
+    font-size: 19px
+    line-height: 24px
+    font-family: "OpenSansdBold", serif
+    color: $black
+
+.room-bill-form__ellipsis
+    border-bottom: 1px $gray dotted
+    flex-grow: 1
+    height: 20px
+
+.room-bill-form__total-price-text-area
+    margin-right: 5px
+
+.room-bill-form__total-price-price
+    margin-left: 5px
+
+// .room-bill-form__total-price-price
+//     font-family: "MontserratBold", serif
+
+    

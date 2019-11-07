@@ -1,0 +1,49 @@
+include ../checkbox-buttons/checkbox-buttons
+
+mixin expandable-checkbox-list(header, ...arr)
+    //- +expandable-checkbox-list("Заголовок списка", 
+            [["id", "name", "Текст пункта"], [...]])
+
+    .expandable-checkbox-list&attributes(attributes)
+        .expandable-checkbox-header
+            h3= header
+            i.material-icons.expand-more-icon &#xe5cf;
+
+        +checkbox-buttons("expandable-checkbox-items", ...arr)
+        //- each item in arr
+        //-     .expandable-checkbox-items
+        //-         input.hidden.hidden-checkbox(type="checkbox" id=item[0] name=item[1])
+        //-         label.checkbox-label(for=item[0])
+        //-             div.visible-checkbox
+        //-             span=item[2]
+
+        //- .expandable-checkbox-items
+        //-     input.hidden.hidden-checkbox(type="checkbox" id="breakfast-id" name="breakfast")
+        //-     label.checkbox-label(for="breakfast-id")
+        //-         div.visible-checkbox
+        //-         span Завтрак
+
+        //-     input.hidden.hidden-checkbox(type="checkbox" id="desk-id" name="desk")
+        //-     label.checkbox-label(for="desk-id")
+        //-         div.visible-checkbox
+        //-         span Письменный стол
+
+        //-     input.hidden.hidden-checkbox(type="checkbox" id="baby-chair-id" name="baby-chair")
+        //-     label.checkbox-label(for="baby-chair-id")
+        //-         div.visible-checkbox
+        //-         span Стул для кормления
+
+        //-     input.hidden.hidden-checkbox(type="checkbox" id="baby-bed-id" name="baby-bed")
+        //-     label.checkbox-label(for="baby-bed-id")
+        //-         div.visible-checkbox
+        //-         span Кроватка
+
+        //-     input.hidden.hidden-checkbox(type="checkbox" id="TV-id" name="TV")
+        //-     label.checkbox-label(for="TV-id")
+        //-         div.visible-checkbox
+        //-         span Телевизор
+
+        //-     input.hidden.hidden-checkbox(type="checkbox" id="shampoo-id" name="shampoo")
+        //-     label.checkbox-label(for="shampoo-id")
+        //-         div.visible-checkbox
+        //-         span Шампунь

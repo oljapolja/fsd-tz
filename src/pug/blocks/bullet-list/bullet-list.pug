@@ -1,0 +1,13 @@
+mixin bullet-list(...itemText)
+
+    .bullet-list
+        ul.bullet-list_items
+            each text in itemText
+                li.bullet-list_item!= text
+
+    //- .bullet-list
+    //-     ul.bullet-list_items
+    //-         li.bullet-list_item Нельзя с питомцами
+    //-         li.bullet-list_item Без вечеринок и мероприятий
+    //-         li.bullet-list_item 
+    //-             span Время прибытия &mdash; после 13:00, а выезд до 12:00
