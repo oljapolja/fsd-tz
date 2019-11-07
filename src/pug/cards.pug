@@ -29,6 +29,8 @@ html(lang="en")
 	body
 		include blocks/room-bill-form/room-bill-form
 		include blocks/room-short-description/room-short-description
+		
+		
 
 		.cards-container
 			.cards-container-first-column
@@ -36,9 +38,11 @@ html(lang="en")
 				include blocks/accaunt-registration-form/accaunt-registration-form
 
 			.cards-container-second-column
-
+				+room-bill-form('9 990')
+				include blocks/sign-in-form/sign-in-form
 
 			.cards-container-third-column
+				include blocks/datapicker-inline/datapicker-inline
 
 		script(src="js/libs.min.js")
 

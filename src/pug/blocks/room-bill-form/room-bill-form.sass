@@ -4,6 +4,7 @@
     line-height: 24px
     font-family: MontserratRegular,sans-serif
     color: $text
+    background-color: #fff
     .room-number-price
         margin-bottom: 20px
     .dropdown-list
@@ -11,12 +12,19 @@
 
 .room-bill-form__period-price,
 .room-bill-form__service-charge,
-.room-bill-form__additional-service,
-.room-bill-form__total-price
+.room-bill-form__additional-service
     display: flex
     justify-content: space-between
     align-items: flex-start
     margin-bottom: 10px
+
+.room-bill-form__period-price,
+.room-bill-form__service-charge
+    line-height: 20px
+    padding-bottom: 4px
+.room-bill-form__additional-service
+    line-height: 18px
+
 
 .room-bill-form__additional-service-text-area,
 .room-bill-form__service-charge-text-area
@@ -41,8 +49,8 @@
     border: 1px solid $gray
     border-radius: 100%
     position: relative
-    margin-left: 5px
-    margin-top: 2px
+    margin-left: 3px
+    margin-top: -1px
     &:hover
         &:after
             content: "service-charge-info"
@@ -59,16 +67,20 @@
             background-color: #fff
 
 .room-bill-form__additional-service-info
+    margin-top: 0px
     &:hover
         &:after
             content: "additional-service-info"
 
 .room-bill-form__total-price
-    margin-top: 20px
+    margin-top: 30px
     font-size: 19px
     line-height: 24px
     font-family: "OpenSansdBold", serif
     color: $black
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
 
 .room-bill-form__ellipsis
     border-bottom: 1px $gray dotted

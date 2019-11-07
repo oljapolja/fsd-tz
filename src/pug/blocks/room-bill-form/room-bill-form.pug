@@ -1,11 +1,13 @@
 include ../button/button
 include ../room-number-price/room-number-price
 include ../dropdown-list/dropdown-list
+include ../datepicker-section/datepicker-section
 mixin room-bill-form(price)
 
     form.room-bill-form(id="room-bill")
         +room-number-price('888', 'Люкс', price)
-        include ../datepicker-section/datepicker-section
+        +datepicker-section("Прибытие", "Выезд")
+        h3 Гости
         +dropdown-list("guests-list")
 
         .room-bill-form__period-price

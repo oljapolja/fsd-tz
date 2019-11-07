@@ -1,5 +1,5 @@
 mixin datepicker-section(firstLabel, secondLabel)
-    .datepicker-section
+    .datepicker-section&attributes(attributes)
         .datepicker-section__item
             label.datepicker-section__label(for="startDate")= firstLabel
             input.datepicker-section__field.my-datepicker(type="text" id="startDate" placeholder="дд.мм.гггг")            

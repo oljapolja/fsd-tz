@@ -1,0 +1,10 @@
+include ../button/button
+include ../input-text/input-text
+include ../account-existance/account-existance
+form.sign-in-form(id="sign-in")
+    h1 Войти
+    +input-text('', "email", "Email", "email-id")
+    +input-text('', "password", "Пароль", "password-id")
+
+    +button('Войти <i class="material-icons arrow-forward-icon"> &#xe5c8;</i>', 'purpule-button long-button')
+    +account-existance('Нет аккаунта на Toxin?', '<span> Создать </span>')
