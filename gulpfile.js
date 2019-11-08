@@ -38,29 +38,20 @@ const paths = {
 	jsBlocks: 'src/pug/blocks/**/*.js',
         jsLib: [
             'node_modules/jquery/dist/jquery.min.js',
-   	        'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
+   	        // 'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
             'node_modules/owl.carousel/dist/owl.carousel.min.js',
-   	        'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
-   	        'node_modules/jquery-mousewheel/jquery.mousewheel.js',
-   	        'node_modules/waypoints/lib/noframework.waypoints.min.js',
-  	        'node_modules/jquery.scrollto/jquery.scrollTo.min.js',
-   	        'node_modules/kbw-countdown/dist/js/jquery.plugin.js',
-   	        'node_modules/kbw-countdown/dist/js/jquery.countdown.min.js',
-   	        'node_modules/kbw-countdown/dist/js/jquery.countdown-ru.js',
+   	        // 'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
+   	        // 'node_modules/jquery-mousewheel/jquery.mousewheel.js',
+   	        // 'node_modules/waypoints/lib/noframework.waypoints.min.js',
+  	        // 'node_modules/jquery.scrollto/jquery.scrollTo.min.js',
    	        'node_modules/superfish/dist/js/superfish.min.js',
-            'node_modules/mmenu-js/dist/mmenu.js',
-            'node_modules/select2/dist/js/select2.min.js',
+            // 'node_modules/mmenu-js/dist/mmenu.js',
+            // 'node_modules/select2/dist/js/select2.min.js',
             'src/libs/lazyload.min.js',
-            'src/libs/jquery-ui-1.12.1.custom/jquery-ui.js',
-            // 'src/libs/jquery.datepicker.extension.range.min.js',
-            // 'src/libs/jquery.datepicker.extension.range.min.js',
             'node_modules/air-datepicker/dist/js/datepicker.js',
 //            'node_modules/lazyload/lazyload.js',
             'node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
-            // 'node_modules/zebra_datepicker/dist/zebra_datepicker.min.js', удалить
-  	        'src/libs/animate-css.js'
-//   	        'src/libs/landing-nav/navigation.js' //кастомный "библиотек" подключаем из папки
-//		'src/libs/drawfillsvg.min.js'//кастомный "библиотек" подключаем из папки
+  	        // 'src/libs/animate-css.js'
         ],
         css: 'src/css/',
     	sass: 'src/sass/**/*.sass',
