@@ -27,9 +27,22 @@ html(lang="en")
 
 
 	body
+		include blocks/header/header
 
 		.main-container
-			
+
+			+header()
+
+			.search-room-section
+				.container
+					.search-room-section__content
+						include blocks/search-rooms-form/search-rooms-form
+
+						.search-room-section__text-area
+							p.search-room-section__text Лучшие номера для вашей работы, отдыха и просто вдохновения
+
+			include blocks/footer/footer
+
 
 		script(src="js/libs.min.js")
 

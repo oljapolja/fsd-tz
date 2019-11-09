@@ -14,6 +14,7 @@ html, body
 	height: 100%
 
 body
+	margin: 0
 	font-size: 14px
 	min-width: 320px
 	position: relative
@@ -48,6 +49,7 @@ h1, h2,
 .h1, .h2,
 	font-family: "OpenSansdBold", serif
 	color: $black
+	margin: 0
 	
 
 
@@ -76,7 +78,7 @@ h3, .h3
 	padding: 0
 
 p
-	margin-bottom: 10px
+	margin: 0 0 10px
 
 .text
 	font-size: 14px
@@ -363,5 +365,25 @@ form
 		&_expand
 			margin-right: 20px
 
-		
-		
+// Website pages
+
+.container
+	margin: 0 $default-page-lr-margin
+
+.search-room-section
+	background-image: url(../img/image3.png)
+	background-position: center -70px
+
+.search-room-section__content
+	padding: 70px 0 18px
+	.search-rooms-form
+		margin-bottom: 317px
+
+.search-room-section__text-area
+	display: flex
+	justify-content: flex-end
+
+.search-room-section__text
+	max-width: 279px
+	text-align: right
+	margin-bottom: 3px

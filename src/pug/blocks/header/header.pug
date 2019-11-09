@@ -1,0 +1,22 @@
+include ../button/button
+mixin header(name)
+    
+
+    header.header
+        .container
+            .header__content
+
+                .header__logo
+                    img.header__logo-img(src="../img/Logo.png", alt="logo")
+
+                .header__menu-line
+                    include ../header-menu/header-menu
+
+                    if (name)
+                        .header__name-devidor
+                        .header__user-name!= name
+                    else
+                        +button('<span> Войти </span>', 'transparent-button')(href='#') 
+                        +button('Зарегистрироваться', 'purpule-button')(href='#') 
+
+//- если пользователь зарегистрировался/вощел +header('Имя'), иначе +header()

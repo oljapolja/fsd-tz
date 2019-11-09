@@ -1,29 +1,43 @@
-.header-main
-    margin: 0 $default-page-lr-margin
+.header__content
     padding: 15px 0
     display: flex
     justify-content: space-between
     align-items: center
     background-color: #fff
 
-.header-main__logo-img
+.header__logo
+    display: flex
+
+.header__logo-img
     width: 106px
     height: auto
 
-.header-main__menu-line
+.header__menu-line
     display: inline-flex
     align-items: center
     .purpule-button, .transparent-button
         margin-left: 20px
     .transparent-button
         span
-            height: 32px
-            padding-top: 8px
+            height: 30px
+            padding-top: 7px
             display: inline-block
             padding-left: 18px
             padding-right: 18px
+            width: unset  
     .purpule-button
         padding: 9px 20px 10px 19px
 
+.header__name-devidor
+    margin: 0 30px
+    height: 30px
+    width: 1px
+    background: rgba(31, 32, 65, 0.1)
+
+.header__user-name
+    font-size: 14px
+    line-height: 17px
+    font-family: "MontserratRegular", serif
+    color: $gray-dark
 
 
