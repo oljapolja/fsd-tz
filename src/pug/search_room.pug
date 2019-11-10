@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+html(lang="en")
+
+	head
+
+		meta(charset="utf-8")
+		//- <base href="/">
+
+		title New project
+		meta(name="description" content="Создание адаптивного сайта")
+
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+		
+		//-  Template Basic Images Start
+		meta(property="og:image" content="path/to/image.jpg")
+		link(rel="icon" href="img/favicon/favicon.ico")
+		link(rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png")
+		//- Template Basic Images End
+		
+		//- Custom Browsers Color Start
+		meta(name="theme-color" content="#000")
+		//- Custom Browsers Color End
+
+		link(rel="stylesheet" href="css/main.min.css")
+
+
+
+	body
+		include blocks/header/header
+		include blocks/room-short-description/room-short-description
+		include blocks/filter-datepicker-section/filter-datepicker-section
+		include blocks/dropdown-list/dropdown-list
+		include blocks/price-range-slider/price-range-slider
+		include blocks/checkbox-buttons/checkbox-buttons
+		include blocks/rich-checkbox-items/rich-checkbox-items
+		include blocks/expandable-checkbox-list/expandable-checkbox-list
+		.main-container
+
+			+header()
+
+			.search-room-filter-section
+				.container
+					.search-room-filter-section__content
+					
+						.search-room-filter-section__side-bar_left
+							
+							+filter-datepicker-section('даты пребывания в отеле')
+
+							h3 Гости
+							+dropdown-list("guests-list")
+
+							+price-range-slider("Диапазон цены", "5 000₽ - 10 000₽", "Стоимость за сутки пребывания в номере")
+
+							h3 Checkbox Buttons
+							+checkbox-buttons('',
+								["smoking-allowance-id", "smoking-allowance", "Можно курить"],
+								["pets-allowance-id", "pets-allowance", "Можно с питомцами"],
+								["invitation-allowance-id", "invitation-allowance", "Можно пригласить гостей (до 10 человек)"]
+								)
+
+							h3 Доступность
+							+rich-checkbox-items(
+								['wide-hall-id', 'wide-hall', 'Широкий коридор', 'Ширина коридоров в номере не менее 91 см.'],
+								['invalid-care-id', 'invalid-care', 'Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.'])
+
+							h3 Удобства номера
+							+dropdown-list("rooms-list")
+
+							+expandable-checkbox-list("Дополнительные удобства", 
+								["breakfast-id", "breakfast", "Завтрак"],
+								["desk-id", "desk", "Письменный стол"],
+								["baby-chair-id", "baby-chair", "Стул для кормления"],
+								["baby-bed-id", "baby-bed", "Кроватка"],
+								["TV-id", "TV", "Телевизор"],
+								["shampoo-id", "shampoo", "Шампунь"])
+
+						.search-room-filter-section__side-bar_right
+
+							h1 Номера, которые мы для вас подобрали
+
+							ul.search-room-filter-section__room-cards
+								li.search-room-filter-section__room-card
+									+room-short-description('', '888', 'Люкс', '9 990', '145', 5,
+									'url(../img/image1.png)',
+									'url(../img/image2.png)',
+									'url(../img/image1.png)',
+									'url(../img/image2.png)')
+								li.search-room-filter-section__room-card
+									+room-short-description(true, '840', '', '9 900', '65', 4,
+									'url(../img/image2.png)',
+									'url(../img/image1.png)',
+									'url(../img/image2.png)',
+									'url(../img/image1.png)')
+								li.search-room-filter-section__room-card
+									+room-short-description(true, '980', 'Люкс', '8 500', '35', 3,
+									'url(../img/image5.png)',
+									'url(../img/image2.png)',
+									'url(../img/image1.png)',
+									'url(../img/image2.png)')
+								li.search-room-filter-section__room-card
+									+room-short-description(true, '856', '', '7 300', '19', 5,
+									'url(../img/image6.png)',
+									'url(../img/image2.png)',
+									'url(../img/image1.png)',
+									'url(../img/image2.png)')
+								li.search-room-filter-section__room-card
+									+room-short-description(true, '740', '', '6 000', '44', 4,
+									'url(../img/image7.png)',
+									'url(../img/image2.png)',
+									'url(../img/image1.png)',
+									'url(../img/image2.png)')
+								li.search-room-filter-section__room-card
+									+room-short-description(true, '982', '', '5 800', '56', 3,
+									'url(../img/image4.png)',
+									'url(../img/image2.png)',
+									'url(../img/image1.png)',
+									'url(../img/image2.png)')
+								li.search-room-filter-section__room-card
+									+room-short-description(true, '678', '', '5 500', '45', 5,
+									'url(../img/image8.png)',
+									'url(../img/image2.png)',
+									'url(../img/image1.png)',
+									'url(../img/image2.png)')
+								li.search-room-filter-section__room-card
+									+room-short-description(true, '450', '', '5 300', '39', 4,
+									'url(../img/image9.png)',
+									'url(../img/image2.png)',
+									'url(../img/image1.png)',
+									'url(../img/image2.png)')
+								li.search-room-filter-section__room-card
+									+room-short-description(true, '350', '', '5 000', '77', 3,
+									'url(../img/image10.png)',
+									'url(../img/image2.png)',
+									'url(../img/image1.png)',
+									'url(../img/image2.png)')
+								li.search-room-filter-section__room-card
+									+room-short-description(true, '666', '', '5 000', '25', 5,
+									'url(../img/image11.png)',
+									'url(../img/image2.png)',
+									'url(../img/image1.png)',
+									'url(../img/image2.png)')
+								li.search-room-filter-section__room-card
+									+room-short-description(true, '444', '', '5 000', '15', 3,
+									'url(../img/image12.png)',
+									'url(../img/image2.png)',
+									'url(../img/image1.png)',
+									'url(../img/image2.png)')
+								li.search-room-filter-section__room-card
+									+room-short-description(true, '352', '', '5 000', '55', 3,
+									'url(../img/image13.png)',
+									'url(../img/image2.png)',
+									'url(../img/image1.png)',
+									'url(../img/image2.png)')
+							
+
+			include blocks/footer/footer
+
+
+		script(src="js/libs.min.js")
+
+
+
+
+
