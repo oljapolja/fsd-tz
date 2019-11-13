@@ -51,6 +51,7 @@ const paths = {
             'node_modules/air-datepicker/dist/js/datepicker.js',
 //            'node_modules/lazyload/lazyload.js',
             'node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
+            'node_modules/apexcharts/dist/apexcharts.min.js'
   	        // 'src/libs/animate-css.js'
         ],
         css: 'src/css/',
