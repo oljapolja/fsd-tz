@@ -4,7 +4,7 @@
     list-style: none
 
 .header-menu__item
-    display: inline-block
+    // display: inline-block
     margin-right: 20px
     &:last-child
         margin-right: 0
@@ -66,3 +66,66 @@
 .services__menu-item-link
     .expand-more-icon
         transform: rotate(-90deg)
+
+#mobile-menu
+    z-index: 1
+    .header-menu__item
+        margin-right: 0
+
+// кнопка от мастера
+.toggle-mnu
+    width: 28px
+    height: 28px
+    float: right
+    margin-left: 20px
+    margin-top: 5px
+    display: none
+    span:after, span:before 
+        content: ""
+        position: absolute
+        left: 0
+        top: 9px
+
+    span:after
+        top: 18px
+
+    span 
+        position: relative
+        display: block
+
+    span, span:after, span:before
+        width: 100%
+        height: 2px
+        background-color: #666
+        transition: all 0.3s
+        backface-visibility: hidden
+        border-radius: 2px
+
+    &.on span 
+        background-color: transparent
+
+    &.on span:before 
+        transform: rotate(45deg) translate(-1px, 0px)
+
+    &.on span:after 
+        transform: rotate(-45deg) translate(6px, -7px)
+
+@media only screen and (max-width : 1120px)
+    .toggle-mnu
+        display: block
+    .header-menu
+        order: 1
+
+    ul.sf-menu
+        display: none
+        
+@media only screen and (min-width : 1121px)
+    #mobile-menu, html.mm-wrapper_blocking .mm-wrapper__blocker
+        display: none
+
+    .mm-wrapper_opening .mm-menu_offcanvas.mm-menu_opened ~ .mm-slideout
+        transform: translate(0px, 0px)
+
+    .mm-wrapper_opening [class*="mm-menu_pagedim"].mm-menu_opened ~ .mm-wrapper__blocker
+        opacity: 0
+

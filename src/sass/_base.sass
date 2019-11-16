@@ -451,14 +451,42 @@ form
 		margin-right: 12px
 
 // 
+
+.room-details-section
+	position: relative
+	&:after
+		content: ""
+		height: 1px
+		width: 100%
+		display: inline-block
+		background-color: rgba(31,32,65,.25)
+		position: absolute
+		bottom: 0
+
 .room-details-section__content
+	display: flex
+	justify-content: space-between
 	padding: 70px 0
 
-.room-details-section__qualities
+.room-details-section__room-information
+	margin-right: 6.034%// 4.861% 70px
+
+.room-details-section__qualities,
+.room-details-section__regulations
 	display: flex
 
+.room-details-section__rules
+	margin-right: 9.845% //70px
+	h2
+		padding-left: 20px
+
+.room-details-section__cancellation
+	max-width: 341px
+	p
+		margin: 0
+
 .room-details-section__benefits
-	margin-right: 81px
+	margin-right: 11.392% //81px
 
 .room-details-section__diagram
 	width: 122px
@@ -495,10 +523,7 @@ form
 //     z-index: 0
 // 	transform: scale(2)
 
-.asdf
-	font-family: "MontserratBold"!important
 .chart-text 
-	
 	-moz-transform: translateY(0.25em)
 	-ms-transform: translateY(0.25em)
 	-webkit-transform: translateY(0.25em)
@@ -531,8 +556,28 @@ form
 
 #chart
 	display: inline-block
+	position: relative
+	z-index: 10
 	.apexcharts-legend-marker
 		margin-right: 5px
+
+
+.room-details-section__comments
+	margin-top: 13px
+	position: relative
+	&:after
+		content: "2 отзыва"
+		position: absolute
+		top: 2px
+		right: 0
+		color: $gray-dark
+
+
+.room-details-section__regulations
+	margin-top: 33px
+	margin-bottom: 3px
+	h2
+		margin-bottom: 17px
 		
 
   

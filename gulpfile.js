@@ -45,7 +45,7 @@ const paths = {
    	        // 'node_modules/waypoints/lib/noframework.waypoints.min.js',
   	        // 'node_modules/jquery.scrollto/jquery.scrollTo.min.js',
    	        'node_modules/superfish/dist/js/superfish.min.js',
-            // 'node_modules/mmenu-js/dist/mmenu.js',
+           	'node_modules/mmenu-js/dist/mmenu.js',
             // 'node_modules/select2/dist/js/select2.min.js',
             'src/libs/lazyload.min.js',
             'node_modules/air-datepicker/dist/js/datepicker.js',

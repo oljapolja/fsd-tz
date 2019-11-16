@@ -6,10 +6,10 @@ mixin comments(...arr)
                 .comment_media
                     .comment_img-wrap
                         img.comment_img(src=comment[0], alt="foto").img-responsive
-                    +like-button(comment[1])
+                    +like-button(comment[1], comment[5])
                 .comment_text
                     .text-title!= comment[2]
-                    p!= comment[3]
+                    p.comment_text-date!= comment[3]
                     p!= comment[4]
 
 
