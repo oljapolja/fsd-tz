@@ -6,14 +6,23 @@ $(function() {
 
    $("#phone").mask("+7 (999) 999-99-99",{completed:function(){alert("You typed the following: "+this.val());}});
 
+   $(".search-room-filter-section__side-bar_right .filter-button").click(function() {
+      $(".search-room-filter-section__side-bar_right").toggle();
+      $(".search-room-filter-section__side-bar_left").toggle();
+   });
+
+   $(".toggle-filter").click(function() {
+      $(".search-room-filter-section__side-bar_right").toggle();
+      $(".search-room-filter-section__side-bar_left").toggle();
+   });
+
    $('.donut-segment1').hover(function() {
-      $('.donut-external-ring').attr('display', 'inherit')
+      $('.donut-external-ring').attr('display', 'inherit');
    });
 
    $('.donut-segment').mouseenter(function(){
       $(this).attr("stroke-width", "5");
     });
-
    
 
    // import ApexCharts from 'apexcharts'

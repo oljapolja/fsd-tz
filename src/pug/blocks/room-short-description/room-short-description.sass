@@ -22,16 +22,19 @@
             bottom: -11px
 
 .room-short-description__img-area
-    width: 270px
+    // width: 100%
+    // width: 270px
     height: 151px
     border-top-left-radius: 4px
     border-top-right-radius: 4px
 
 .room-short-description__img
-    width: 270px
+    // width: 370px
     height: 151px
     border-top-left-radius: 4px
     border-top-right-radius: 4px
+    background-size: cover
+    background-position: center center
     position: relative
     &:before
         content: ""
@@ -87,6 +90,11 @@
 
 .room-short-description__img-carousel
     position: relative
+    // width: 370px
+    // width: 100%
+
+// .owl-carousel.owl-loaded {
+// 	display: inline-block
 
 .owl-dots
     position: absolute
@@ -106,6 +114,8 @@
 .owl-carousel button.owl-dot.active
     background-color: #fff
     box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3)
+
+
 
 .room-short-description__info
     padding: 20px

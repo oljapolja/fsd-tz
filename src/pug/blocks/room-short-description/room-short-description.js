@@ -1,12 +1,13 @@
 $(function() {
     $('.owl-carousel').owlCarousel({
         loop: true,
-        margin: 0,
+        // margin: 0,
         nav: true,
         navText: "",
         // autoplay: true,
-        autoplayHoverPause: true,
-        smartSpeed: 500,
+        // autoplayHoverPause: true,
+        // autoWidth: true,
+        // items: 1,
         responsive: {
             0: {
                 items: 1
@@ -16,10 +17,12 @@ $(function() {
 
 
     $('.slider-button-prev').click(function () {
-        $('.owl-carousel').trigger("prev.owl");
+        $(this).parent().children('.owl-carousel').trigger("prev.owl");
+        // $('.owl-carousel').trigger("prev.owl");
     });
 
     $('.slider-button-next').click(function () {
-        $('.owl-carousel').trigger("next.owl");
+        $(this).parent().children('.owl-carousel').trigger("next.owl");
+        // $('.owl-carousel').trigger("next.owl");
     });
 });

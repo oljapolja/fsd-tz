@@ -4,20 +4,10 @@
 .header__content
     padding: 15px 0
     display: flex
-    justify-content: space-between
+    flex-wrap: wrap
+    justify-content: flex-end
     align-items: center
     background-color: #fff
-
-.header__logo
-    display: flex
-
-.header__logo-img
-    width: 106px
-    height: auto
-
-.header__menu-line
-    display: inline-flex
-    align-items: center
     .purpule-button, .transparent-button
         margin-left: 20px
     .transparent-button
@@ -31,6 +21,21 @@
     .purpule-button
         padding: 9px 20px 10px 19px
 
+.header__logo
+    display: flex
+    margin-right: auto
+    order: -1
+
+.header__logo-img
+    width: 106px
+    height: auto
+
+// .header__menu-line
+//     display: inline-flex
+//     align-items: center
+//     flex-wrap: wrap
+
+
 .header__name-devidor
     margin: 0 30px
     height: 30px
@@ -43,4 +48,28 @@
     font-family: "MontserratRegular", serif
     color: $gray-dark
 
+@media only screen and (max-width : 595px)
+
+    // .header__content
+    //     justify-content: center
+
+    .header__content:after
+        content: ''
+        width: 100%
+        order: 1
+
+    .header-menu
+        order: 0
+
+    .header
+        .purpule-button,
+        .transparent-button
+            order: 2
+            margin-top: 10px
+    .header__content 
+        .transparent-button
+            margin-left: 0
+        .purpule-button
+            // margin-right: 20%
+        // margin-right: auto
 

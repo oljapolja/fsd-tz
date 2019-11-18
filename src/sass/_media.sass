@@ -1,31 +1,97 @@
 @import "vars"
 
 
-/*==========  Desktop First  ==========*/
+/*==========  Desktop First Method  ==========*/
 
-// ≥1200px
-// +media-breakpoint-down(lg)
+// /* Large Devices, Wide Screens */
+// @media only screen and (max-width : 1200px) 
+@media only screen and (max-width : 1400px)
+    .search-room-filter-section__room-card
+    	width: 48%
 
-// // ≥992px
-// +media-breakpoint-down(md)
+@media only screen and (max-width : 1080px)
 
-// // ≥768px
-// +media-breakpoint-down(sm)
-
-// // ≥576px
-// +media-breakpoint-down(xs)
+    .search-room-filter-section__room-card
+    	width: 100%
 
 
-// /*==========  Mobile First  ==========*/
 
-// // ≤576px
-// +media-breakpoint-up(sm)
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) 
+    .search-room-section__content
+        .search-rooms-form
+            margin-bottom: 217px
 
-// // ≤768px
-// +media-breakpoint-up(md)
+    // .search-room-filter-section__room-card
+    // 	width: 48%
 
-// // ≤992px
-// +media-breakpoint-up(lg)
 
-// // ≤1200px
-// +media-breakpoint-up(xl)
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) 
+    .search-room-section__content
+        .search-rooms-form
+            margin-bottom: 117px
+
+    .search-room-filter-section__side-bar_right
+        .filter-button
+            display: inline-block
+    
+    .search-room-filter-section__side-bar_left
+        display: none
+
+    .search-room-filter-section__room-card
+    	width: 48%
+
+    .search-room-filter-section__content
+        justify-content: center
+
+    .toggle-filter
+        display: block
+        position: absolute
+        top: 20px
+        right: 0
+
+@media only screen and (max-width : 680px) 
+    .search-room-filter-section__room-card
+    	width: 100%
+
+
+
+// /* Extra Small Devices, Phones */
+// @media only screen and (max-width : 480px) 
+
+
+// /* Custom, iPhone Retina */
+// @media only screen and (max-width : 320px) 
+
+
+
+
+// /*==========  Mobile First Method  ==========*/
+
+// /* Custom, iPhone Retina */
+// @media only screen and (min-width : 320px) 
+
+
+
+// /* Extra Small Devices, Phones */
+// @media only screen and (min-width : 480px) 
+
+
+
+// /* Small Devices, Tablets */
+@media only screen and (min-width : 768px) 
+    .search-room-filter-section__side-bar_right,
+    .search-room-filter-section__side-bar_left
+        display: block
+
+
+
+// /* Medium Devices, Desktops */
+// @media only screen and (min-width : 992px) 
+
+
+
+//  /* Large Devices, Wide Screens */
+// @media only screen and (min-width : 1200px) 
+

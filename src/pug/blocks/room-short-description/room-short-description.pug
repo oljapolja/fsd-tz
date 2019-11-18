@@ -13,9 +13,10 @@ mixin room-short-description(simpleImg, roomNumber, addInfo, price, feedbackAmou
         .room-short-description__img-carousel(class= addClass)
             .room-short-description__img-area.owl-carousel
                 each img in imgs
+
                     .room-short-description__img(style!='background-image: ' + img)
                     
-                
+                                    //- img.room-short-description__img(src=img)
                 //- .room-short-description__img(style="background-image: url(../img/image1.png)")
                 //- .room-short-description__img(style="background-image: url(../img/image2.png)")
                 //- .room-short-description__img(style="background-image: url(../img/image1.png)")

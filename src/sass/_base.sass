@@ -378,6 +378,9 @@ form
 	background-repeat: no-repeat
 
 .search-room-section
+	background-position: center bottom // изменила, чтобы было видно надпись
+
+.search-room-section
 	background-image: url(../img/image3.png)
 
 .search-room-section__content
@@ -411,10 +414,22 @@ form
 	justify-content: center
 
 // 
+
+.search-room-filter-section
+	position: relative
+	&:after
+		content: ""
+		height: 1px
+		width: 100%
+		display: inline-block
+		background-color: rgba(31,32,65,.25)
+		position: absolute
+		bottom: 0
 .search-room-filter-section__content
 	padding: 30px 0 70px
 	display: flex
 	justify-content: space-between
+	position: relative
 	.dropdown-list,
 	.dropdown-list__results
 		width: 266px
@@ -435,20 +450,89 @@ form
 .search-room-filter-section__side-bar_left
 	margin-right: 60px
 
+// кнопка от мастера
+.toggle-filter
+    width: 28px
+    height: 28px
+    float: right
+    margin-left: 20px
+    margin-top: 5px
+    display: none
+    span:after, span:before 
+        content: ""
+        position: absolute
+        left: 0
+        top: 9px
+
+    span:after
+        top: 18px
+
+    span 
+        position: relative
+        display: block
+
+    span, span:after, span:before
+        width: 100%
+        height: 2px
+        background-color: #666
+        transition: all 0.3s
+        backface-visibility: hidden
+        border-radius: 2px
+
+    span 
+        background-color: transparent
+
+    span:before 
+        transform: rotate(45deg) translate(-1px, 0px)
+
+    span:after 
+        transform: rotate(-45deg) translate(6px, -7px)
+
+.search-room-filter-section__side-bar_right
+	// display: flex
+	// flex-wrap: wrap
+	flex-grow: 1
+	width: 250px
+	position: relative
+	// width: 834px //без точного рвзмера овл не хочет работать, но т.к.  flex-grow: 1, то размер респосив получается
+	.filter-button
+		display: none
+		// position: absolute	
+		top: 0
+		right: 0
+		margin-bottom: 20px
+		margin-left: 50%
+		transform: translate(-50%, 0)
+		span
+			height: 30px
+			padding-top: 7px
+			width: unset
+			padding-left: 18px
+			padding-right: 18px
+
+
 .search-room-filter-section__room-cards
 	list-style: none
 	margin: 0
 	padding: 0
 	display: flex
+	flex-grow: 1
+	justify-content: space-between
 	flex-wrap: wrap
 
 .search-room-filter-section__room-card
+	display: inline-block
+	width: 32.3%//270px
 	padding: 0
-	margin: 0 12px 20.5px 0
-	&:nth-child(3n+0)
-		margin-right: 0
-	&:first-child
-		margin-right: 12px
+	margin-bottom: 20.5px
+	// margin: 0 1.335% 20.5px 0
+	// &:nth-child(3n+0)
+	// 	margin-right: 0
+	// &:first-child
+	// 	margin-right: 1.335%
+		// margin-right: 12px
+	.room-short-description
+		width: 100%
 
 // 
 

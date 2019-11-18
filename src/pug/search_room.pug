@@ -42,8 +42,10 @@ html(lang="en")
 			.search-room-filter-section
 				.container
 					.search-room-filter-section__content
-					
 						.search-room-filter-section__side-bar_left
+							a.toggle-filter(href="#")
+								span
+								i
 							
 							+filter-datepicker-section('даты пребывания в отеле')
 
@@ -79,6 +81,8 @@ html(lang="en")
 
 							h1 Номера, которые мы для вас подобрали
 
+							+button('<span> Фильтры </span>', 'transparent-button filter-button')(href='#') 
+
 							ul.search-room-filter-section__room-cards
 								li.search-room-filter-section__room-card
 									+room-short-description('', '888', 'Люкс', '9 990', '145', 5,
@@ -91,12 +95,12 @@ html(lang="en")
 									'url(../img/image2.png)',
 									'url(../img/image1.png)',
 									'url(../img/image2.png)',
-									'url(../img/image1.png)')
+									'url(../img/image2.png)')
 								li.search-room-filter-section__room-card
 									+room-short-description(true, '980', 'Люкс', '8 500', '35', 3,
 									'url(../img/image5.png)',
-									'url(../img/image2.png)',
 									'url(../img/image1.png)',
+									'url(../img/image2.png)',
 									'url(../img/image2.png)')
 								li.search-room-filter-section__room-card
 									+room-short-description(true, '856', '', '7 300', '19', 5,
@@ -141,14 +145,14 @@ html(lang="en")
 									'url(../img/image1.png)',
 									'url(../img/image2.png)')
 								li.search-room-filter-section__room-card
-									+room-short-description(true, '444', '', '5 000', '15', 3,
-									'url(../img/image12.png)',
+									+room-short-description(true, '352', '', '5 000', '55', 3,
+									'url(../img/image13.png)',
 									'url(../img/image2.png)',
 									'url(../img/image1.png)',
 									'url(../img/image2.png)')
 								li.search-room-filter-section__room-card
-									+room-short-description(true, '352', '', '5 000', '55', 3,
-									'url(../img/image13.png)',
+									+room-short-description(true, '444', '', '5 000', '15', 3,
+									'url(../img/image12.png)',
 									'url(../img/image2.png)',
 									'url(../img/image1.png)',
 									'url(../img/image2.png)')

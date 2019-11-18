@@ -1,3 +1,6 @@
+.datepicker-section__item
+	width: 150px
+	
 .datepicker-section__label
 	font-size: 12px
 	text-transform: uppercase
@@ -24,15 +27,16 @@
 
 .datepicker-section__field::-webkit-input-placeholder,
 .datepicker-section__field::-moz-placeholder,
-.datepicker-section__field:-moz-placeholder
+.datepicker-section__field:-moz-placeholder,
+.datepicker-section__field::placeholder
 	color: $text
 	opacity: 1
 	font-size: 18px
 
 
 .my-datepicker,
-.fake-dadapicker
-	width: 150px
+.datepicker-section__field.fake-dadapicker
+	width: 100%
 	z-index: 1
 
 .datepicker
@@ -176,8 +180,11 @@
 		border-radius: 22px
 
 .datepicker-section
-	.datepicker-section__item:first-child
-		margin-right: 16px
+	display: flex
+	justify-content: space-between
+	position: relative
+	// .datepicker-section__item:first-child
+	// 	margin-right: 16px
 
 .datepicker-section__item
 	position: relative
@@ -213,10 +220,6 @@
 	justify-content: flex-end
 	color: $purple
 
-
-.datepicker-section
-	position: relative	
-
 // .date_range-class
 // 	display: none
 // 	position: absolute
@@ -231,3 +234,25 @@
 	border: none
 	position: absolute
 	display: block
+
+@media only screen and (max-width : 474px)
+	.datepicker-section__item
+		width: 46.8%
+
+@media only screen and (max-width : 450px)
+	.datepicker
+		width: 260px
+		padding: 15px
+
+	.datepickers-container
+		left: -2%
+
+@media only screen and (max-width : 380px)
+	.datepickers-container
+		left: -12%
+
+
+
+
+
+	
