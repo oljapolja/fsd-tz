@@ -40,7 +40,7 @@ const paths = {
             'node_modules/jquery/dist/jquery.min.js',
    	        // 'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
             'node_modules/owl.carousel/dist/owl.carousel.min.js',
-   	        // 'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
+   	    'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
    	        // 'node_modules/jquery-mousewheel/jquery.mousewheel.js',
    	        // 'node_modules/waypoints/lib/noframework.waypoints.min.js',
   	        // 'node_modules/jquery.scrollto/jquery.scrollTo.min.js',

@@ -42,27 +42,32 @@ html(lang="en")
 
 				.room-details-section
 
-					+room-gallery("url(../img/gallery_img1.png);", "url(../img/gallery_img2.png);", "url(../img/gallery_img3.png);")
+					+room-gallery("url(../img/gallery_img1.png);", "../../../img/gallery_img1.png", "url(../img/gallery_img2.png);", "../../../img/gallery_img2.png", "url(../img/gallery_img3.png);", "../../../img/gallery_img3.png")
 
 					.container
 						.room-details-section__content
 
 								.room-details-section__room-information
 
-									.room-details-section__qualities
+									.room-details-section__qualities-area
+										.room-details-section__qualities
 
-										.room-details-section__benefits
-											h2 Сведения о номере
-											+benefits(
-												['face-icons, gradient-color-text', '&#xe24e;', 'Комфорт', 'Шумопоглощающие стены'],
-												['house-icons, gradient-color-text', '&#xe7f1;', 'Удобство', 'Окно в каждой из спален'],
-												['fier-icons, gradient-color-text', '&#xe80e;', 'Уют', 'Номер оснащен камином'])
+											.room-details-section__benefits
+												h2 Сведения о номере
+												+benefits(
+													['face-icons, gradient-color-text', '&#xe24e;', 'Комфорт', 'Шумопоглощающие стены'],
+													['house-icons, gradient-color-text', '&#xe7f1;', 'Удобство', 'Окно в каждой из спален'],
+													['fier-icons, gradient-color-text', '&#xe80e;', 'Уют', 'Номер оснащен камином'])
 
-										.room-details-section__impressions
-											h2 Впечатления от номера
-											.chart_wrap
-												div(id="chart")
-													//- <apexchart type=donut width=380 :options="chartOptions" :series="series" />
+											.room-details-section__impressions
+												h2 Впечатления от номера
+												include blocks/impressions-donut-diagram/impressions-donut-diagram
+												//- .chart_wrap
+												//- 	div(id="chart")
+														//- <apexchart type=donut width=380 :options="chartOptions" :series="series" />
+
+										
+										+room-bill-form('9 990')
 
 									.room-details-section__comments
 										h2 Отзывы посетителей номера

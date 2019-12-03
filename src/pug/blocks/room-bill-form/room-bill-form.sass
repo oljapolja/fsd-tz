@@ -1,6 +1,6 @@
 .room-bill-form
     display: inline-block
-    font-size: 14px
+    // font-size: 14px
     line-height: 24px
     font-family: MontserratRegular,sans-serif
     color: $text
@@ -95,5 +95,26 @@
 
 // .room-bill-form__total-price-price
 //     font-family: "MontserratBold", serif
+
+@media only screen and (max-width : 474px)
+    .room-bill-form
+        width: 100%
+        padding: 20px 7.86% 20px 7.86%
+
+    .room-bill-form
+        .dropdown-list,
+        .dropdown-list__results,
+        .long-button
+            width: 100%
+
+
+    .room-bill-form__additional-service-text,
+    .room-bill-form__service-charge-text
+        width: 124px
+
+    
+    .room-bill-form__additional-service-info:hover::after, 
+    .room-bill-form__service-charge-info:hover::after
+        right: -86px
 
     

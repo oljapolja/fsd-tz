@@ -1,5 +1,29 @@
 .datepicker-section__item
 	width: 150px
+	position: relative
+	display: inline-block
+	z-index: 2
+	margin-bottom: 20px
+	line-height: 0
+	&:after
+		content: "expand_more"
+		font-family: "MaterialIcons"
+		font-weight: normal
+		font-style: normal
+		font-size: 24px
+		display: inline-block
+		line-height: 1
+		text-transform: none
+		letter-spacing: normal
+		word-wrap: normal
+		white-space: nowrap
+		direction: ltr
+		position: absolute
+		color: rgba(31, 32, 65, 0.5)
+		right: 10px
+		top: 49%
+		z-index: -1
+		cursor: pointer
 	
 .datepicker-section__label
 	font-size: 12px
@@ -21,7 +45,8 @@
 	padding: 15px 13px
 	font-size: 14px
 	line-height: 18px
-	background-color: #fff
+	background-color: transparent
+	// z-index: 2
 	&:focus, &:hover
 		border: 1px solid $gray-dark
 
@@ -37,7 +62,7 @@
 .my-datepicker,
 .datepicker-section__field.fake-dadapicker
 	width: 100%
-	z-index: 1
+	z-index: 2
 
 .datepicker
 	width: 280px
@@ -186,12 +211,8 @@
 	// .datepicker-section__item:first-child
 	// 	margin-right: 16px
 
-.datepicker-section__item
-	position: relative
-	display: inline-block
-	z-index: 1
-	margin-bottom: 20px
-	line-height: 0
+// .datepicker-section__item
+	
 
 .datepicker--buttons
 	border: none
@@ -239,17 +260,62 @@
 	.datepicker-section__item
 		width: 46.8%
 
+	.datepicker-section__field::-webkit-input-placeholder,
+	.datepicker-section__field::-moz-placeholder,
+	.datepicker-section__field:-moz-placeholder,
+	.datepicker-section__field::placeholder
+		font-size: 16px
+
+	.datepicker-section__field
+		height: 35px
+		padding: 7px 9px
+
+	.datepicker-section__item
+		&:after
+			font-size: 19px
+			right: 5px
+			top: 50%
+
 @media only screen and (max-width : 450px)
 	.datepicker
 		width: 260px
-		padding: 15px
+		padding: 13px
 
 	.datepickers-container
 		left: -2%
 
+	.datepicker--nav-title,
+	.datepicker--nav-title i
+		font-size: 17px
+		line-height: 22px
+
+	.datepicker--nav
+	    margin-bottom: 20px
+
+	.datepicker--day-name
+		width: 30px
+		height: 30px
+
+	.datepicker--day-name,
+	.datepicker--cell
+		width: 37px
+		height: 37px
+
 @media only screen and (max-width : 380px)
 	.datepickers-container
 		left: -12%
+
+	.datepicker-section__field::-webkit-input-placeholder,
+	.datepicker-section__field::-moz-placeholder,
+	.datepicker-section__field:-moz-placeholder,
+	.datepicker-section__field::placeholder
+		font-size: 13px
+
+	.datepicker-section__item
+		&:after
+			top: 52%
+	// .datepicker-section__field
+	// 	padding: 13px 10px
 
 
 

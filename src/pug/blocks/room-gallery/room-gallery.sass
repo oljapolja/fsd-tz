@@ -3,25 +3,38 @@
 	display: flex
 
 .room-gallery__room-big-img
-	width: 68.05%
+	width: 100%
+	// width: 68.05%
 	// width: 981px
-	max-height: 100%
+	height: 100%
 	background-repeat: no-repeat
 	background-size: cover
 	background-position: center
 
 .room-gallery__room-little-imgs
-	display: inline-block
+	display: flex
+	flex-direction: column
+	// width: 100%
 	width: 31.95%
-	max-height: 100%
+	height: 100%
 
 .room-gallery__room-little-img
 	// width: 461px
 	width: 100%
-	height: 50%
+	height: 100%
 	background-repeat: no-repeat
 	background-size: cover
 	background-position: center bottom
+
+.room-gallery__room-big-img-link
+	width: 68.05%
+	max-height: 100%
+	display: inline-block
+
+.room-gallery__room-little-img-link
+	display: inline-block
+	width: 100%
+	height: 50%
 
 /* Large Devices, Wide Screens */
 
@@ -32,7 +45,7 @@
 @media only screen and (max-width : 992px)
     .room-gallery
 	    height: 304px
-    .room-gallery__room-big-img
+    .room-gallery__room-big-img-link
 	    width: 62%
         // background-size: contain
     .room-gallery__room-little-imgs

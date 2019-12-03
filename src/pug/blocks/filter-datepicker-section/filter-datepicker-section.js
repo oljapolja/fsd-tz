@@ -50,4 +50,7 @@ $(function() {
             })
         }
     });
+
+    $('.search-room-filter-section').parent().siblings('.datepickers-container').css("left", "-10px");
+
 });

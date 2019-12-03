@@ -32,8 +32,13 @@ $(function() {
         prevHtml: '<i class="material-icons arrow-backward-icon gradient-color-text"> &#xe5c4; </i>',
         nextHtml: '<i class="material-icons arrow-forward-icon gradient-color-text"> &#xe5c8; </i>',
         onSelect: function (formattedDate, date, inst) {
-            $('#startDate').val(formattedDate.split(",")[0]);
-            $('#endDate').val(formattedDate.split(",")[1]);
+            console.log(formattedDate.split(",").length)
+            inst.el.parentElement.parentElement.firstElementChild.lastElementChild.value = formattedDate.split(",")[0];
+            // $('#startDate').val(formattedDate.split(",")[0]);
+            if (formattedDate.split(",").length == 2) {
+                inst.el.parentElement.parentElement.lastElementChild.lastElementChild.value = formattedDate.split(",")[1];
+            }
+            // $('#endDate').val(formattedDate.split(",")[1]);
         },
         onHide: function (inst, animationCompleted) { },
         onChangeMonth: function (month, year) {
@@ -50,8 +55,10 @@ $(function() {
     });
 
     $('#endDate').click(function () {
-        if ($('#startDate').val() === '') {
-            $('#startDate').focus();
+        
+        // console.log($(this).parent().parent().children().children('#startDate').val())
+        if ($(this).parent().parent().children().children('#startDate').val() === '') {
+            $(this).parent().parent().children().children('#startDate').focus();
         } else {
             dataPickerHandler.data('datepicker').show();
         }

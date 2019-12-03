@@ -18,7 +18,7 @@
 	padding: 15px 13px
 	font-size: 14px
 	line-height: 18px
-	background-color: #fff
+	background-color: transparent
 	&:focus, &:hover
 		border: 1px solid $gray-dark
 
@@ -184,6 +184,25 @@
 	z-index: 1
 	margin-bottom: 20px
 	line-height: 0
+	&:after
+		content: "expand_more"
+		font-family: "MaterialIcons"
+		font-weight: normal
+		font-style: normal
+		font-size: 24px
+		display: inline-block
+		line-height: 1
+		text-transform: none
+		letter-spacing: normal
+		word-wrap: normal
+		white-space: nowrap
+		direction: ltr
+		position: absolute
+		color: rgba(31, 32, 65, 0.5)
+		right: 10px
+		top: 49%
+		z-index: -1
+		cursor: pointer
 
 .datepicker--buttons
 	border: none
@@ -230,3 +249,39 @@
 	border: none
 	position: absolute
 	display: block
+
+@media only screen and (max-width : 474px)
+	.filter-datepicker-section__field
+		height: 35px
+		padding: 7px 9px
+
+	.filter-datepicker-section__field::-webkit-input-placeholder,
+	.filter-datepicker-section__field::-moz-placeholder,
+	.filter-datepicker-section__field:-moz-placeholder
+		font-size: 16px
+
+@media only screen and (max-width : 450px)
+	.datepicker
+		width: 260px
+		padding: 13px
+
+	.datepickers-container
+		left: -2%
+
+	.datepicker--nav-title,
+	.datepicker--nav-title i
+		font-size: 17px
+		line-height: 22px
+
+	.datepicker--nav
+	    margin-bottom: 20px
+
+	.datepicker--day-name,
+	.datepicker--cell
+		width: 37px
+		height: 37px
+
+@media only screen and (max-width : 380px)
+	.my-filter-datepicker
+		.datepickers-container
+			left: -12%

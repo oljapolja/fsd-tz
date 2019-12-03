@@ -2,6 +2,7 @@ $(function () {
 
 	// функция для подсчета суммы input
 	const countInputSum = (cssClass) => {
+		// console.log($(cssClass));
 		let inputSum = 0;
 		$(cssClass).each(function () {
 			inputSum = inputSum + Number($(this)[0].value);
@@ -85,9 +86,11 @@ $(function () {
 				};
 
 				// Увеличим значение
-				const increment = () => {
+				const increment = (ev) => {
 					let value = parseInt(counterField[0].value);
 					value += 1;
+
+					console.log($(ev.currentTarget.parentElement.parentElement.parentElement).find('.results-clear-button'));
 
 					if (!maxValue || value <= maxValue) {
 						$(counterField[0]).attr('value', `${value}`);
@@ -100,8 +103,9 @@ $(function () {
 					}
 
 					// Отображение кнопки "очистить"
+					
 					if ($(counterField[0]).hasClass('could-be-clean') && counterField[0].value !== minValue) {
-						$('.results-clear-button').css('display', 'block');
+						$(ev.currentTarget.parentElement.parentElement.parentElement).find('.results-clear-button').css('display', 'block');
 					}
 
 					// Прямое отображение текста для .rooms-amount
@@ -111,6 +115,8 @@ $(function () {
 						$('.rooms-amount_default-text').html(`${makeDirectlyTextConcat('.directly-to-text-area')}`);
 					}
 				};
+
+				
 
 				if (!counterField.attr('disabled')) {
 					dec.on('click', decrement);
@@ -155,22 +161,39 @@ $(function () {
 		amountDropdownItemCounterCall[$(this).attr('id')] = 0;
 	});
 
+	console.log(amountDropdownItemCounterCall);
+
 	// при клике на .dropdown-list__text-area выпадает список
 	// происходит выполнение функции счетчиков dropdownItemCounter
 	// т.к. выполнение происходит с использованием .each,
 	//  dropdownItemCounter нужно выполнить только один раз
 	$(".dropdown-list__text-area").click(function () {
 		const dropdownId = $(this).parent().attr('id');
-		$(`#${dropdownId}`).toggleClass("on");
+		$(this).toggleClass("on");
+		// $(`#${dropdownId}`).toggleClass("on");
+		console.log(amountDropdownItemCounterCall)
+		console.log($(this).parent().find('.counter__field'))
 
-		if ($(`#${dropdownId}`).hasClass('on') && amountDropdownItemCounterCall[dropdownId] === 0) {
-			dropdownItemCounter(`#${dropdownId} .counter__field`);
+		if ($(this).hasClass('on') && amountDropdownItemCounterCall[dropdownId] === 0) {
+			dropdownItemCounter($(this).parent().find('.counter__field'));
+			// dropdownItemCounter(`#${dropdownId} .counter__field`);
 			amountDropdownItemCounterCall[dropdownId] = 1;
 		}
+
+		$(document).mouseup(function (e){ // событие клика по веб-документу
+			console.log(`#${dropdownId}`);
+			var div = $(`#${dropdownId}`); // тут указываем ID элемента
+			if (!div.is(e.target) // если клик был не по нашему блоку
+				&& div.has(e.target).length === 0) { // и не по его дочерним элементам
+				console.log(23);
+				div.find(".dropdown-list__text-area").removeClass("on"); // скрываем его
+			}
+		});
+
 	});
 
 	// Изменяем слово "гость" в соответствии с количеством для .guests-amount
-	const viewReadableText = (guestSum) => {
+	const viewReadableText = (guestSum, outTextField) => {
 		let arrGuestSumStr = [];
 		for (let i = 0; i < String(guestSum).length; i += 1) {
 			arrGuestSumStr.push(String(guestSum)[i]);
@@ -178,20 +201,24 @@ $(function () {
 		// массив строковых чисел результата
 		let lastIndex = arrGuestSumStr.length - 1
 		// Сложности русского языка
+		// console.log(outTextField)
 		if (arrGuestSumStr[lastIndex] === "1" && guestSum !== '11') {
-			$('.guests-amount_default-text').html(`${guestSum} гость`);
+			outTextField.html(`${guestSum} гость`);
 		} else if (arrGuestSumStr[lastIndex] >= '2' && arrGuestSumStr[lastIndex] <= '4' && guestSum !== '12' && guestSum !== '13' && guestSum !== '14') {
-			$('.guests-amount_default-text').html(`${guestSum} гостя`);
+			outTextField.html(`${guestSum} гостя`);
 		} else if (arrGuestSumStr[lastIndex] >= '5' || arrGuestSumStr[lastIndex] === '0') {
-			$('.guests-amount_default-text').html(`${guestSum} гостей`);
+			outTextField.html(`${guestSum} гостей`);
 		}
 	};
 
 	// Кнопка вывода результата для .guests-amount
 	$('.results-apply-button').click(function (event) {
 		event.preventDefault();
-		viewReadableText(countInputSum('.counter__field.could-be-clean'));
+		viewReadableText(countInputSum($(this).parent().parent().children().children('.counter').children('.counter__field')), $(this).parent().parent().parent().parent().children('.dropdown-list__text-area').children('.guests-amount_default-text'));
+
+		// console.log($(this).parent().parent().parent().parent().children('.dropdown-list__text-area').children('.guests-amount_default-text'))
 	});
 
+	
 
 });

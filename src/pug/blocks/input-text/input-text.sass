@@ -8,6 +8,7 @@
 	margin: 0
 	display: flex
 	flex-direction: column
+	width: 320px
 
 
 .input-field
@@ -17,7 +18,7 @@
 	border: 1px solid $gray
 	color: $text
 	border-radius: 4px
-	width: 320px
+	width: 100%
 	height: 44px
 	padding: 15px 13px
 	font-size: 14px
@@ -26,9 +27,40 @@
 	&:focus, &:hover
 		border: 1px solid $gray-dark
 
+.input-field::-webkit-input-placeholder,
+.input-field:-moz-placeholder,
+.input-field::placeholder
+	font-size: 24px
+
 #birthday-id:-moz-placeholder,
 #birthday-id::placeholder,
 #birthday-id::-webkit-input-placeholder 
-    color: $gray
-    opacity: 1
-    font-size: 18px
+	color: $gray
+	opacity: 1
+	font-size: 18px
+
+
+
+@media only screen and (max-width : 474px)
+	.input-field
+		height: 35px
+		padding: 7px 9px
+
+	.input-field::-webkit-input-placeholder,
+	.input-field:-moz-placeholder,
+	.input-field::placeholder
+		font-size: 12px
+
+	#birthday-id::-webkit-input-placeholder,
+	#birthday-id:-moz-placeholder,
+	#birthday-id::placeholder
+		font-size: 16px
+
+
+
+
+@media only screen and (max-width : 380px)
+	#birthday-id::-webkit-input-placeholder,
+	#birthday-id:-moz-placeholder,
+	#birthday-id::placeholder
+		font-size: 14px

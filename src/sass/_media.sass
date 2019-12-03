@@ -9,6 +9,24 @@
     .search-room-filter-section__room-card
     	width: 48%
 
+    // 
+    .room-details-section__room-information
+        margin: 0
+
+    .room-details-section__qualities
+        display: flex
+        flex-direction: column
+        margin-right: 6.034%
+    .room-details-section__qualities-area
+        .room-bill-form
+            display: inline-block
+
+    .room-details-section__room-bill
+        display: none
+
+    .room-details-section__comments
+        margin-top: 30px
+
 @media only screen and (max-width : 1080px)
 
     .search-room-filter-section__room-card
@@ -21,9 +39,39 @@
     .search-room-section__content
         .search-rooms-form
             margin-bottom: 217px
+    //
+
+    .room-details-section__qualities-area
+        flex-direction: column-reverse
+        .room-bill-form
+            margin-left: 50%
+            transform: translate(-50%, 0)
+        // justify-content: center
+
+    .room-details-section__benefits
+        margin-right: 9%
+
+    .room-details-section__qualities
+        flex-direction: row
+        margin-top: 30px
+        margin-right: 0
+        width: 100%
+        justify-content: space-between
+        flex-wrap: wrap
+    .room-details-section__regulations
+        justify-content: space-between
+        flex-wrap: wrap
 
     // .search-room-filter-section__room-card
     // 	width: 48%
+
+    //
+    
+    .room-details-section__rules
+        margin-right: 30px
+        .bullet-list
+            max-width: 85%
+            
 
 
 /* Small Devices, Tablets */
@@ -31,6 +79,8 @@
     .search-room-section__content
         .search-rooms-form
             margin-bottom: 117px
+    
+    // 
 
     .search-room-filter-section__side-bar_right
         .filter-button
@@ -38,12 +88,16 @@
     
     .search-room-filter-section__side-bar_left
         display: none
+        &.on
+            display: block
+            margin-right: 0 
 
     .search-room-filter-section__room-card
     	width: 48%
 
     .search-room-filter-section__content
         justify-content: center
+        padding: 40px 0 30px
 
     .toggle-filter
         display: block
@@ -51,14 +105,51 @@
         top: 20px
         right: 0
 
+    // 
+    .footer-content
+        padding: 50px 0
+
+    // 
+    .room-details-section__content
+        padding: 50px 0
+
 @media only screen and (max-width : 680px) 
     .search-room-filter-section__room-card
     	width: 100%
 
+    //
+    .room-details-section__rules
+        margin-right: 0
+        width: 100%
+        flex-basis: unset
+        margin-bottom: 30px
+        .bullet-list
+            max-width: unset
+
 
 
 // /* Extra Small Devices, Phones */
-// @media only screen and (max-width : 480px) 
+@media only screen and (max-width : 474px)
+    h1
+        font-size: 20px
+        line-height: 26px
+        margin-bottom: 15px
+
+    h2
+        font-size: 17px
+        line-height: 20px
+        margin-bottom: 15px
+    
+    body
+        font-size: 13px
+
+@media only screen and (max-width : 400px)
+    .chart_wrap
+	    height: 100px
+
+    .room-details-section__benefits
+        margin-right: 0
+    
 
 
 // /* Custom, iPhone Retina */

@@ -1,8 +1,10 @@
-mixin room-gallery(bigImg, littleImg1, littleImg2)
+mixin room-gallery(bigImgUrl, bigImgSrc, littleImg1Url, littleImg1Src, littleImg2Url, littleImg2Src)
 
     .room-gallery
-
-        .room-gallery__room-big-img(style="background-image:" + bigImg)
+        a(href= bigImgSrc data-fancybox="images").room-gallery__room-big-img-link
+            .room-gallery__room-big-img(style="background-image:" + bigImgUrl)
         .room-gallery__room-little-imgs
-            .room-gallery__room-little-img(style="background-image:" + littleImg1)
-            .room-gallery__room-little-img(style="background-image:" + littleImg2)
+            a(href= littleImg1Src data-fancybox="images").room-gallery__room-little-img-link
+                .room-gallery__room-little-img(style="background-image:" + littleImg1Url)
+            a(href= littleImg2Src data-fancybox="images").room-gallery__room-little-img-link
+                .room-gallery__room-little-img(style="background-image:" + littleImg2Url)
