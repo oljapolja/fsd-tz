@@ -39,9 +39,13 @@ $(function () {
 			for (let index in itemIdtArr) {
 				if ($(this).attr('id') === itemIdtArr[index] && Number($(this)[0].value) !== 0) {
 					if (countActiveAmount('.directly-to-text-area') > 2 && itemIdtArr.length - 1 === Number(index)) {
-						directlyTextConcat = directlyTextConcat + "...";
+						directlyTextConcat = directlyTextConcat + " ...";
 					} else {
-						directlyTextConcat = directlyTextConcat + $(this)[0].value + ' ' + itemTextArr[index] + ", ";
+						if (directlyTextConcat === '') {
+							directlyTextConcat = directlyTextConcat + $(this)[0].value + ' ' + itemTextArr[index];
+						} else {
+							directlyTextConcat = directlyTextConcat + ", " + $(this)[0].value + ' ' + itemTextArr[index];
+						}
 					}
 				}
 			}
@@ -90,7 +94,7 @@ $(function () {
 					let value = parseInt(counterField[0].value);
 					value += 1;
 
-					console.log($(ev.currentTarget.parentElement.parentElement.parentElement).find('.results-clear-button'));
+					// console.log($(ev.currentTarget.parentElement.parentElement.parentElement).find('.results-clear-button'));
 
 					if (!maxValue || value <= maxValue) {
 						$(counterField[0]).attr('value', `${value}`);
@@ -161,7 +165,7 @@ $(function () {
 		amountDropdownItemCounterCall[$(this).attr('id')] = 0;
 	});
 
-	console.log(amountDropdownItemCounterCall);
+	// console.log(amountDropdownItemCounterCall);
 
 	// при клике на .dropdown-list__text-area выпадает список
 	// происходит выполнение функции счетчиков dropdownItemCounter
@@ -171,8 +175,8 @@ $(function () {
 		const dropdownId = $(this).parent().attr('id');
 		$(this).toggleClass("on");
 		// $(`#${dropdownId}`).toggleClass("on");
-		console.log(amountDropdownItemCounterCall)
-		console.log($(this).parent().find('.counter__field'))
+		// console.log(amountDropdownItemCounterCall)
+		// console.log($(this).parent().find('.counter__field'))
 
 		if ($(this).hasClass('on') && amountDropdownItemCounterCall[dropdownId] === 0) {
 			dropdownItemCounter($(this).parent().find('.counter__field'));
@@ -181,11 +185,10 @@ $(function () {
 		}
 
 		$(document).mouseup(function (e){ // событие клика по веб-документу
-			console.log(`#${dropdownId}`);
+			// console.log(`#${dropdownId}`);
 			var div = $(`#${dropdownId}`); // тут указываем ID элемента
 			if (!div.is(e.target) // если клик был не по нашему блоку
 				&& div.has(e.target).length === 0) { // и не по его дочерним элементам
-				console.log(23);
 				div.find(".dropdown-list__text-area").removeClass("on"); // скрываем его
 			}
 		});
@@ -214,8 +217,8 @@ $(function () {
 	// Кнопка вывода результата для .guests-amount
 	$('.results-apply-button').click(function (event) {
 		event.preventDefault();
-		viewReadableText(countInputSum($(this).parent().parent().children().children('.counter').children('.counter__field')), $(this).parent().parent().parent().parent().children('.dropdown-list__text-area').children('.guests-amount_default-text'));
-
+		viewReadableText(countInputSum($(this).parent().parent().find('.counter__field')), $(this).parent().parent().parent().parent().find('.guests-amount_default-text'));
+		$(this).parent().parent().parent().siblings(".dropdown-list__text-area").removeClass("on"); // закрываем облать результата
 		// console.log($(this).parent().parent().parent().parent().children('.dropdown-list__text-area').children('.guests-amount_default-text'))
 	});
 

@@ -1,6 +1,6 @@
 include ../button/button
-mixin account-existance(text, buttonText)
+mixin account-existance(text, buttonText, href)
 
     .account-existance
         span.account-existance_text!= text
-        +button(buttonText, 'transparent-button')(href='#') 
+        +button(buttonText, 'transparent-button')(href= href) 

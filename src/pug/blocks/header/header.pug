@@ -6,7 +6,7 @@ mixin header(name)
         .container
             .header__content
 
-                .header__logo
+                a.header__logo(href="index.html")
                     img.header__logo-img(src="../img/Logo.png", alt="logo")
 
                 //- .header__menu-line
@@ -16,7 +16,7 @@ mixin header(name)
                     .header__name-devidor
                     .header__user-name!= name
                 else
-                    +button('<span> Войти </span>', 'transparent-button')(href='#') 
-                    +button('Зарегистрироваться', 'purpule-button')(href='#') 
+                    +button('<span> Войти </span>', 'transparent-button')(href='sign_in.html') 
+                    +button('Зарегистрироваться', 'purpule-button')(href='registration.html') 
 
 //- если пользователь зарегистрировался/вощел +header('Имя'), иначе +header()

@@ -32,11 +32,18 @@ $(function() {
         prevHtml: '<i class="material-icons arrow-backward-icon gradient-color-text"> &#xe5c4; </i>',
         nextHtml: '<i class="material-icons arrow-forward-icon gradient-color-text"> &#xe5c8; </i>',
         onSelect: function (formattedDate, date, inst) {
-            console.log(formattedDate.split(",").length)
-            inst.el.parentElement.parentElement.firstElementChild.lastElementChild.value = formattedDate.split(",")[0];
-            // $('#startDate').val(formattedDate.split(",")[0]);
-            if (formattedDate.split(",").length == 2) {
-                inst.el.parentElement.parentElement.lastElementChild.lastElementChild.value = formattedDate.split(",")[1];
+
+            if (!formattedDate) {
+                inst.el.parentElement.parentElement.lastElementChild.lastElementChild.value = "";
+            } else {
+                // console.log(formattedDate.split(",").length)
+                inst.el.parentElement.parentElement.firstElementChild.lastElementChild.value = formattedDate.split(",")[0];
+                // $('#startDate').val(formattedDate.split(",")[0]);
+                if (formattedDate.split(",").length == 2) {
+                    inst.el.parentElement.parentElement.lastElementChild.lastElementChild.value = formattedDate.split(",")[1];
+                }
+
+                
             }
             // $('#endDate').val(formattedDate.split(",")[1]);
         },
@@ -47,7 +54,7 @@ $(function() {
         onShow: function (inst, animationCompleted) {
             $('.datepicker--nav-title, .datepicker--nav-title i').addClass('-disabled-');
 
-            $('.datepicker--button[data-action=today]').attr('data-action', 'apply').click(function () {
+            $('.datepicker--button[data-action=today]').attr({'data-action': 'apply', 'class': 'link-purple-button'}).click(function () {
                 inst.hide();
                 $('.my-datepicker').blur();
             })
